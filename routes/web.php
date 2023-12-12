@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.page.dashboard');
+});
+
+Route::get('/form', function () {
+    return view('dashboard.page.form.baseForm');
 });
 
 Route::get('/dashboard', function () {
