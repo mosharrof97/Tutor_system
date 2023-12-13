@@ -179,17 +179,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('city')}}" class="menu-link">
                                     <div data-i18n="Account">All City</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="addcity" class="menu-link">
+                                <a href="{{route('addcity')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add City</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('city')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete City</div>
                                 </a>
                             </li>

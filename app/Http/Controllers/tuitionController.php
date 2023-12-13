@@ -36,14 +36,14 @@ class tuitionController extends Controller
         return view('dashboard\page\tuition\updateTuitionType', compact('tuition'));
     }
 
-    public Function update(Request $request){
+    public Function update(Request $request, $id){
         $request->validate([
             'tuition_type' => 'required|max:100',
         ]);
         $data=[
             'tuition_name'=> $request->tuition_type,
         ];
-        Tuition::update($data);
+        Tuition::where('tuition_id', $id)->update($data);
         return Redirect::route('tuition')->with('success', 'Tuition Update Successfull');
     }
 
