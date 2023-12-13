@@ -16,7 +16,7 @@ class cityController extends Controller
 
     // ---------City Add----------//
     public Function addcity(){
-        return view('dashboard\page\city\addcity1');
+        return view('dashboard\page\city\addcity');
     }
 
     public Function store( Request $request ){
