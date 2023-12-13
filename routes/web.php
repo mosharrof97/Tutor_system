@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\tuitionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +44,13 @@ Route::get('/addtuitor', function () {
 
 
 //........Tuition ........................
-Route::get('/addtuition', function () {
-    return view('dashboard.page.tuition.addtuition');
-});
+Route::get('/tuition', [tuitionController::class, 'tuition'])-> name('tuition');
+Route::get('/addtuition', [tuitionController::class, 'addtuition'])-> name('addtuition');
+Route::post('/addtuition', [tuitionController::class, 'store'])-> name('tuitiondata');
+Route::get('/update_tuition/{id}', [tuitionController::class, 'edit'])-> name('tuition.edit');
+Route::post('/update_tuition', [tuitionController::class, 'update'])-> name('tuition.update');
+Route::delete('/delete_tuition/{id}', [tuitionController::class, 'delete'])-> name('tuition.delete');
+
 
 
 //........City ........................
@@ -59,7 +65,7 @@ Route::get('/addclass', function () {
 });
 
 
-//........Class ........................
+//........Day ........................
 Route::get('/addday', function () {
     return view('dashboard.page.day.addday');
 });

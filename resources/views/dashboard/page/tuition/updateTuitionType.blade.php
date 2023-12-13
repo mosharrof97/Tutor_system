@@ -13,12 +13,12 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    <form action="{{route('tuitiondata')}}" method="post">
+                    <form action="{{route('tuition.update', $tuition->tuition_id)}}" method="post">
                         @csrf
 
                         <div class="mb-3">
                             <label class="form-label" for="tuition_type">Tuition Type</label>
-                            <input type="text" class="form-control" id="tuition_type" name="tuition_type" placeholder="tuition_type">
+                            <input type="text" class="form-control" id="tuition_type" name="tuition_type" value="{{$tuition->tuition_name}}">
                             @error('tuition_type')
                                 <span id="" class="form-text text-danger">{{ $message }}</span>
                             @enderror

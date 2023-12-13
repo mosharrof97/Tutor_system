@@ -154,17 +154,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('tuition')}}" class="menu-link">
                                     <div data-i18n="Account">All Tuition</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="addtuition" class="menu-link">
+                                <a href="{{route('addtuition')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Tuition</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('tuition')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Tuition</div>
                                 </a>
                             </li>
