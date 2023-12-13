@@ -49,10 +49,7 @@ class tuitionController extends Controller
 
 // ---------Delete----------//
     public Function delete( $id){
-// dd($id);
-        $tuition = Tuition::where('tuition_id', $id)->find();
-        // dd($tuition);
-        $tuition->delete();
+        $tuition = Tuition::where('tuition_id', $id)->delete();
         return Redirect::route('tuition')->with('success', 'Tuition Update Successfull');
     }
 }

@@ -49,10 +49,7 @@ class cityController extends Controller
 
 // ---------Delete----------//
     public Function delete( $id){
-// dd($id);
-        $city = City::where('city_id', $id)->find();
-        // dd($city);
-        $city->delete();
+        $city = City::where('city_id', $id)->delete();
         return Redirect::route('city')->with('success', 'Tuition Update Successfull');
     }
 }
