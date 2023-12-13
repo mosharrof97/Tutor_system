@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.page.dashboard');
+});
+
+Route::get('/form', function () {
+    return view('dashboard.page.form.baseForm');
 });
 
 Route::get('/dashboard', function () {
@@ -27,5 +31,47 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+//............Tanvir part-1..................................
+
+//........Tuitor ........................
+Route::get('/addtuitor', function () {
+    return view('dashboard.page.tuitor.addtuitor');
+});
+
+
+//........Tuition ........................
+Route::get('/addtuition', function () {
+    return view('dashboard.page.tuition.addtuition');
+});
+
+
+//........City ........................
+Route::get('/addcity', function () {
+    return view('dashboard.page.city.addcity');
+});
+
+
+//........Class ........................
+Route::get('/addclass', function () {
+    return view('dashboard.page.class.addclass');
+});
+
+
+//........Class ........................
+Route::get('/addday', function () {
+    return view('dashboard.page.day.addday');
+});
+
+//........Location ........................
+Route::get('/addlocation', function () {
+    return view('dashboard.page.location.addlocation');
+});
+
+
+
+
+
 
 require __DIR__.'/auth.php';
