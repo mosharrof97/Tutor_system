@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 
 //........Tuitor ........................
 Route::get('/addtuitor', function () {
-    return view('dashboard.page.tuitor.addtuitor');
+    return view('dashboard.page.tuitor.addtuitor1');
 });
 
 
