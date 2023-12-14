@@ -83,5 +83,4 @@ Route::get('/addlocation', function () {
 
 
 
-
 require __DIR__.'/auth.php';
