@@ -71,16 +71,21 @@ Route::get('/update_location/{id}', [locationController::class, 'edit'])-> name(
 Route::post('/update_location/{id}', [locationController::class, 'update'])-> name('location.update');
 Route::delete('/delete_location/{id}', [locationController::class, 'delete'])-> name('location.delete');
 
-//........Class ........................
-Route::get('/addclass', function () {
-    return view('dashboard.page.class.addclass');
-});
+//........Teacher Category....(tanvir)....................
+Route::get('/category', [TeacherCategoryController::class, 'category'])-> name('category');
+Route::get('/addteacher', [TeacherCategoryController::class, 'addteacher'])-> name('addteacher');
+Route::post('/addteacher', [TeacherCategoryController::class, 'store'])-> name('categorydata');
+Route::get('/update_category/{id}', [TeacherCategoryController::class, 'edit'])-> name('category.edit');
+Route::post('/update_category/{id}', [TeacherCategoryController::class, 'update'])-> name('category.update');
+Route::delete('/delete_category/{id}', [TeacherCategoryController::class, 'delete'])-> name('category.delete');
 
-
-//........Day ........................
-Route::get('/addday', function () {
-    return view('dashboard.page.day.addday');
-});
+//........Class .......(tanvir).................
+Route::get('/class', [TeacherCategoryController::class, 'class'])-> name('class');
+Route::get('/addclass', [TeacherCategoryController::class, 'addclass'])-> name('addclass');
+Route::post('/addclass', [TeacherCategoryController::class, 'store'])-> name('classdata');
+Route::get('/update_class/{id}', [TeacherCategoryController::class, 'edit'])-> name('class.edit');
+Route::post('/update_class/{id}', [TeacherCategoryController::class, 'update'])-> name('class.update');
+Route::delete('/delete_class/{id}', [TeacherCategoryController::class, 'delete'])-> name('class.delete');
 
 
 require __DIR__.'/auth.php';
