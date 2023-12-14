@@ -356,12 +356,12 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('location')}}" class="menu-link">
                                     <div data-i18n="Account">All Location</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="addlocation" class="menu-link">
+                                <a href="{{route('addlocation')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Location</div>
                                 </a>
                             </li>
