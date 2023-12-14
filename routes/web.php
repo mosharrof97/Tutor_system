@@ -1,13 +1,11 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\tuitionController;
 use App\Http\Controllers\cityController;
 use App\Http\controllers\TeacherCategoryController;
 use App\Http\Controllers\locationController;
-
-
+use App\Http\Controllers\FrontentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +16,16 @@ use App\Http\Controllers\locationController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Frontend Routes -------------------------------------------
+Route::get('/', [FrontentController::class, 'index'])->name('home');
+Route::get('/aboutUs', [FrontentController::class, 'about'])->name('about');
+Route::get('/contact', [FrontentController::class, 'contact'])->name('contact');
+Route::get('/courses', [FrontentController::class, 'courses'])->name('courses');
+Route::get('/pricing', [FrontentController::class, 'pricing'])->name('pricing');
+Route::get('/toturs', [FrontentController::class, 'toturs'])->name('toturs');
 
-Route::get('/', function () {
+// Backend Routes ---------------------------------------------------
+Route::get('/db', function () {
     return view('dashboard.page.dashboard');
 });
 
