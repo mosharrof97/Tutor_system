@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\tuitionController;
 use App\Http\Controllers\cityController;
+use App\Http\controllers\TeacherCategoryController;
 use App\Http\Controllers\locationController;
 
 
@@ -63,6 +64,23 @@ Route::get('/update_city/{id}', [cityController::class, 'edit'])-> name('city.ed
 Route::post('/update_city/{id}', [cityController::class, 'update'])-> name('city.update');
 Route::delete('/delete_city/{id}', [cityController::class, 'delete'])-> name('city.delete');
 
+//........Teacher Category....(tanvir)....................
+Route::get('/category', [TeacherCategoryController::class, 'category'])-> name('category');
+Route::get('/addteacher', [TeacherCategoryController::class, 'addteacher'])-> name('addteacher');
+Route::post('/addteacher', [TeacherCategoryController::class, 'store'])-> name('categorydata');
+Route::get('/update_category/{id}', [TeacherCategoryController::class, 'edit'])-> name('category.edit');
+Route::post('/update_category/{id}', [TeacherCategoryController::class, 'update'])-> name('category.update');
+Route::delete('/delete_category/{id}', [TeacherCategoryController::class, 'delete'])-> name('category.delete');
+
+//........Class .......(tanvir).................
+Route::get('/class', [TeacherCategoryController::class, 'class'])-> name('class');
+Route::get('/addclass', [TeacherCategoryController::class, 'addclass'])-> name('addclass');
+Route::post('/addclass', [TeacherCategoryController::class, 'store'])-> name('classdata');
+Route::get('/update_class/{id}', [TeacherCategoryController::class, 'edit'])-> name('class.edit');
+Route::post('/update_class/{id}', [TeacherCategoryController::class, 'update'])-> name('class.update');
+Route::delete('/delete_class/{id}', [TeacherCategoryController::class, 'delete'])-> name('class.delete');
+
+
 //.....................Location ........................
 Route::get('/location', [locationController::class, 'location'])-> name('location');
 Route::get('/addlocation', [locationController::class, 'addlocation'])-> name('addlocation');
@@ -70,6 +88,8 @@ Route::post('/addlocation', [locationController::class, 'store'])-> name('locati
 Route::get('/update_location/{id}', [locationController::class, 'edit'])-> name('location.edit');
 Route::post('/update_location/{id}', [locationController::class, 'update'])-> name('location.update');
 Route::delete('/delete_location/{id}', [locationController::class, 'delete'])-> name('location.delete');
+
+
 
 
 
