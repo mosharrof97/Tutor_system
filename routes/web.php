@@ -71,16 +71,7 @@ Route::get('/update_location/{id}', [locationController::class, 'edit'])-> name(
 Route::post('/update_location/{id}', [locationController::class, 'update'])-> name('location.update');
 Route::delete('/delete_location/{id}', [locationController::class, 'delete'])-> name('location.delete');
 
-//........Class ........................
-Route::get('/addclass', function () {
-    return view('dashboard.page.class.addclass');
-});
 
-
-//........Day ........................
-Route::get('/addday', function () {
-    return view('dashboard.page.day.addday');
-});
 
 
 require __DIR__.'/auth.php';
