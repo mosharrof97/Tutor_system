@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\tuitionController;
 use App\Http\Controllers\cityController;
+use App\Http\controllers\TeacherCategoryController;
 
 
 /*
@@ -63,10 +64,21 @@ Route::post('/update_city/{id}', [cityController::class, 'update'])-> name('city
 Route::delete('/delete_city/{id}', [cityController::class, 'delete'])-> name('city.delete');
 
 
-//........Class ........................
-Route::get('/addclass', function () {
-    return view('dashboard.page.class.addclass');
-});
+//........Teacher Category....(tanvir)....................
+Route::get('/category', [TeacherCategoryController::class, 'category'])-> name('category');
+Route::get('/addteacher', [TeacherCategoryController::class, 'addteacher'])-> name('addteacher');
+Route::post('/addteacher', [TeacherCategoryController::class, 'store'])-> name('categorydata');
+Route::get('/update_category/{id}', [TeacherCategoryController::class, 'edit'])-> name('category.edit');
+Route::post('/update_category/{id}', [TeacherCategoryController::class, 'update'])-> name('category.update');
+Route::delete('/delete_category/{id}', [TeacherCategoryController::class, 'delete'])-> name('category.delete');
+
+//........Class .......(tanvir).................
+Route::get('/class', [TeacherCategoryController::class, 'class'])-> name('class');
+Route::get('/addclass', [TeacherCategoryController::class, 'addclass'])-> name('addclass');
+Route::post('/addclass', [TeacherCategoryController::class, 'store'])-> name('classdata');
+Route::get('/update_class/{id}', [TeacherCategoryController::class, 'edit'])-> name('class.edit');
+Route::post('/update_class/{id}', [TeacherCategoryController::class, 'update'])-> name('class.update');
+Route::delete('/delete_class/{id}', [TeacherCategoryController::class, 'delete'])-> name('class.delete');
 
 
 //........Day ........................
@@ -74,10 +86,7 @@ Route::get('/addday', function () {
     return view('dashboard.page.day.addday');
 });
 
-//........Location ........................
-Route::get('/addlocation', function () {
-    return view('dashboard.page.location.addlocation');
-});
+
 
 
 

@@ -7,7 +7,6 @@
 
                     <h5 class="mb-0">Class Name</h5>
                     <small class="text-muted float-end">Default label</small>
-
                 </div>
 
                 <div class="card-body">
@@ -15,7 +14,7 @@
                         @csrf
 
                         <div class="mb-3">
-                            
+
                             <label class="form-label" for="class_name">Class Name</label>
                             <input type="text" class="form-control" id="class_name" name="class_name" placeholder="class name">
                         </div>
@@ -30,7 +29,7 @@
                                 <option value="">Math</option>
                             </select>
                         </div>
-                       
+
                         <button type="submit" class="btn btn-primary">Add class</button>
 
                     </form>
