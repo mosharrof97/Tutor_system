@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\tuitionController;
 use App\Http\Controllers\cityController;
+use App\Http\Controllers\locationController;
 
 
 /*
@@ -62,24 +63,13 @@ Route::get('/update_city/{id}', [cityController::class, 'edit'])-> name('city.ed
 Route::post('/update_city/{id}', [cityController::class, 'update'])-> name('city.update');
 Route::delete('/delete_city/{id}', [cityController::class, 'delete'])-> name('city.delete');
 
-
-//........Class ........................
-Route::get('/addclass', function () {
-    return view('dashboard.page.class.addclass');
-});
-
-
-//........Day ........................
-Route::get('/addday', function () {
-    return view('dashboard.page.day.addday');
-});
-
-//........Location ........................
-Route::get('/addlocation', function () {
-    return view('dashboard.page.location.addlocation');
-});
-
-
+//.....................Location ........................
+Route::get('/location', [locationController::class, 'location'])-> name('location');
+Route::get('/addlocation', [locationController::class, 'addlocation'])-> name('addlocation');
+Route::post('/addlocation', [locationController::class, 'store'])-> name('locationdata');
+Route::get('/update_location/{id}', [locationController::class, 'edit'])-> name('location.edit');
+Route::post('/update_location/{id}', [locationController::class, 'update'])-> name('location.update');
+Route::delete('/delete_location/{id}', [locationController::class, 'delete'])-> name('location.delete');
 
 
 
