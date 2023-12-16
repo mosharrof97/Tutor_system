@@ -10,24 +10,36 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="" method="post">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <form action="{{route('classdata')}}" method="post">
                         @csrf
 
                         <div class="mb-3">
 
                             <label class="form-label" for="class_name">Class Name</label>
                             <input type="text" class="form-control" id="class_name" name="class_name" placeholder="class name">
+
+                            @error('class_name')
+                                <span id="" class="form-text text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="category_name">Category name</label>
-                            {{-- <input type="text" class="form-control" id="category_name" name="category_name" placeholder="category name"> --}}
-                            <select name="category_name" id="category_name">
+                            <label class="form-label" for="category_id">Category name</label>
+                            <select name="category_id" id="category_id" class="form-control">
                                 <option value="">Select Category name</option>
-                                <option value="">bangla</option>
-                                <option value="">English</option>
-                                <option value="">Math</option>
+                                @foreach ($catagory as  $data)
+                                <option value="{{$data->category_id}}">{{$data->category_name}}</option>
+                                @endforeach
                             </select>
+
+                            @error('category_id')
+                                <span id="" class="form-text text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary">Add class</button>

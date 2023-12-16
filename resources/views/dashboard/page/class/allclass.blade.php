@@ -8,15 +8,16 @@
                     <tr>
                         <th>Class Id</th>
                         <th>Class Type</th>
+                        <th>Category</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ( $studentclass as $data)
-
+                    @foreach ( $class as $data)
                     <tr>
-                        <td>{{$data->student_id}}</td>
-                        <td>{{$data->student_name}}</td>
+                        <td>{{$data->class_id}}</td>
+                        <td>{{$data->class_name}}</td>
+                        <td>{{$data->category_id}}</td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -24,9 +25,9 @@
                                 </button>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('class.edit',$data->student_id)}}"><i class="bx bx-edit-alt me-1"></i>  Edit</a>
+                                    <a class="dropdown-item" href="{{route('class.edit',$data->class_id)}}"><i class="bx bx-edit-alt me-1"></i>  Edit</a>
                                     <div class="dropdown-item">
-                                        <form action="{{route('class.delete',$data->student_id)}}" method="post">
+                                        <form action="{{route('class.delete',$data->class_id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm"><i class="bx bx-trash me-1"></i>Delete</button>

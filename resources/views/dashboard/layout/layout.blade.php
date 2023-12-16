@@ -204,17 +204,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('category')}}" class="menu-link">
                                     <div data-i18n="Account">All Category</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-notifications.html" class="menu-link">
+                                <a href="{{route('addcategory')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Category</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('category')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Category</div>
                                 </a>
                             </li>
@@ -229,12 +229,12 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('class')}}" class="menu-link">
                                     <div data-i18n="Account">All Class</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="addclass" class="menu-link">
+                                <a href="{{route('addclass')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Class</div>
                                 </a>
                             </li>
@@ -254,17 +254,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('subject')}}" class="menu-link">
                                     <div data-i18n="Account">All Subject</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-notifications.html" class="menu-link">
+                                <a href="{{route('addsubject')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Subject</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('subject')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Subject</div>
                                 </a>
                             </li>
@@ -278,17 +278,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('student')}}" class="menu-link">
                                     <div data-i18n="Account">All Student</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-notifications.html" class="menu-link">
+                                <a href="{{route('addstudent')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Student</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('student')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Student</div>
                                 </a>
                             </li>
@@ -304,19 +304,19 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('day')}}" class="menu-link">
                                     <div data-i18n="Account">All Day
                                     </div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="addday" class="menu-link">
+                                <a href="{{route('addday')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Day
                                     </div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('day')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Day
                                     </div>
                                 </a>
@@ -332,17 +332,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('subject')}}" class="menu-link">
                                     <div data-i18n="Account">All Social_Media</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-notifications.html" class="menu-link">
+                                <a href="{{route('subject')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Social_Media</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                <a href="{{route('subject')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Social_Media</div>
                                 </a>
                             </li>

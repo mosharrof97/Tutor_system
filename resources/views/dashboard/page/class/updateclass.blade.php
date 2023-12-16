@@ -13,13 +13,27 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    <form action="{{route('studentclass.update', $studentclass->student_id)}}" method="post">
+                    <form action="{{route('class.update', $class->class_id)}}" method="post">
                         @csrf
 
                         <div class="mb-3">
                             <label class="form-label" for="student_type">Student Class Type</label>
-                            <input type="text" class="form-control" id="student_type" name="student_type" value="{{$studentclass->student_name}}">
-                            @error('student_type')
+                            <input type="text" class="form-control" id="student_type" name="class_name" value="{{$class->class_name}}">
+                            @error('class_name')
+                                <span id="" class="form-text text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="category_id">Category name</label>
+                            <select name="category_id" id="category_id" class="form-control">
+                                <option value="">Select Category name</option>
+                                @foreach ($category as  $data)
+                                <option value="{{$data->category_id}}" {{$class->class_id == $data->category_id ? 'selected' : ''}}>{{$data->category_name}}</option>
+                                @endforeach
+                            </select>
+
+                            @error('category_id')
                                 <span id="" class="form-text text-danger">{{ $message }}</span>
                             @enderror
                         </div>

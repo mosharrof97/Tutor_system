@@ -8,12 +8,20 @@
                     <small class="text-muted float-end">Default label</small>
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <form action="{{route('subjectdata')}}" method="post">
                         @csrf
 
                         <div class="mb-3">
-                            <label class="form-label" for="sub_name">Subject name</label>
-                            <input type="text" class="form-control" id="sub_name" name="sub_name" placeholder="subject name">
+                            <label class="form-label" for="subject_name">Subject name</label>
+                            <input type="text" class="form-control" id="subject_name" name="subject_name" placeholder="subject name">
+                            @error('subject_name')
+                                <span id="" class="form-text text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                        
                         <button type="submit" class="btn btn-primary">Add Subject</button>
