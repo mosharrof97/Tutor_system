@@ -332,17 +332,17 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{route('subject')}}" class="menu-link">
+                                <a href="{{route('social')}}" class="menu-link">
                                     <div data-i18n="Account">All Social_Media</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('subject')}}" class="menu-link">
+                                <a href="{{route('addsocial')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Social_Media</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('subject')}}" class="menu-link">
+                                <a href="{{route('social')}}" class="menu-link">
                                     <div data-i18n="Connections">Delete Social_Media</div>
                                 </a>
                             </li>

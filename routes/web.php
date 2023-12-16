@@ -10,6 +10,7 @@ use App\Http\Controllers\studentController;
 use App\Http\Controllers\classController;
 use App\Http\Controllers\dayController;
 use App\Http\Controllers\subjectController;
+use App\Http\Controllers\socialMediaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -123,5 +124,13 @@ Route::post('/addsubject', [subjectController::class, 'store'])-> name('subjectd
 Route::get('/update_subject/{id}', [subjectController::class, 'edit'])-> name('subject.edit');
 Route::put('/update_subject/{id}', [subjectController::class, 'update'])-> name('subject.update');
 Route::delete('/delete_subject/{id}', [subjectController::class, 'delete'])-> name('subject.delete');
+
+//.....................Social Media........................
+Route::get('/socialmedia', [socialMediaController::class, 'social'])-> name('social');
+Route::get('/addsocialmedia', [socialMediaController::class, 'addsocial'])-> name('addsocial');
+Route::post('/addsocialmedia', [socialMediaController::class, 'store'])-> name('socialdata');
+Route::get('/update_socialmedia/{id}', [socialMediaController::class, 'edit'])-> name('social.edit');
+Route::put('/update_socialmedia/{id}', [socialMediaController::class, 'update'])-> name('social.update');
+Route::delete('/delete_socialmedia/{id}', [socialMediaController::class, 'delete'])-> name('social.delete');
 
 require __DIR__.'/auth.php';
