@@ -5,12 +5,41 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Learning Today,<br>Leading Tomorrow</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="courses.html" class="btn-get-started">Get Started</a>
+
+        <br> <br> <br> <br> <br> <br>
+     <div>  <a href="courses.html" class="btn-get-started">Get Started</a>
+    {{-- <h1>Learning Today,<br>Leading Tomorrow</h1> --}}
     </div>
+    </div>
+
+
   </section><!-- End Hero -->
   <main id="main">
+
+     <!-- ======= Counts Section ======= -->
+     <section id="counts" class="counts section-bg">
+        <div class="container">
+          <div class="row counters">
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <h3>Active Tutors</h3>
+            </div>
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+              <h3>Live Tuition Jobs</h3>
+            </div>
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="584" data-purecounter-duration="1" class="purecounter"></span>
+              <h3>Happy Students</h3>
+            </div>
+            <div class="col-lg-3 col-6 text-center">
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <h3>Average Tutor Rating</h3>
+            </div>
+          </div>
+        </div>
+      </section><!-- End Counts Section -->
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
@@ -37,29 +66,7 @@
         </div>
       </div>
     </section><!-- End About Section -->
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
-      <div class="container">
-        <div class="row counters">
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Students</p>
-          </div>
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Courses</p>
-          </div>
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Events</p>
-          </div>
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Trainers</p>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Counts Section -->
+
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container" data-aos="fade-up">
