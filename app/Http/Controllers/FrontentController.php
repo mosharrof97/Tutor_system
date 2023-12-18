@@ -35,6 +35,12 @@ class FrontentController extends Controller
         return view ('frontend.page.tutors');
     }
 
+
+    public function jobboard()
+    {
+        return view ('frontend.page.jobboard');
+    }
+
     public function destroy(string $id)
     {
         //

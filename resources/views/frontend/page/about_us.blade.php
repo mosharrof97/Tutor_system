@@ -19,7 +19,7 @@
             <img src="{{asset('frontend')}}/assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>g1 Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
@@ -151,7 +151,7 @@
       </div>
     </section><!-- End Testimonials Section -->
   </main><!-- End #main -->
-  
+
 <!------------------- End Changing Part ---------------------->
 @include('frontend/layout/footer')
 @endsection

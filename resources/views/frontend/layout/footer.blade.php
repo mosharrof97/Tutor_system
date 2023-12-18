@@ -6,8 +6,8 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Tutors World</h3>
             <p>
-              9/A, Kalabagan<br>
-              Dhaka-1205<br>
+              Mirpur<br>
+              Dhaka-1216<br>
               Bangladesh<br><br>
               <strong>Phone:</strong> +8801793-800828<br>
               <strong>Email:</strong> tutorsworld@gmail.com<br>
@@ -34,8 +34,12 @@
             </ul>
           </div>
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our World</h4>
-            <p>Tutors World was founded in 2023. It is Bangladesh's first Dynamic, most Faithfull and leading online platform for guardians, students, and tutors to hire verified tutors or find tuition jobs in 15 different categories from anywhere in the country.</p>
+            <h4>ABOUT US</h4>
+            <p>
+                This tuition media would assist both guardian and teacher to find out best tutor and tuition respectively.
+                 A private teacher can make the lession easier to the student. For the benefit of both teacher and student
+                  we are trying our level best to provide best tutoring services. On the Guardian post link parents
+                  can post their requirement to hire a best teacher.</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>

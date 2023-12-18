@@ -29,6 +29,9 @@ Route::get('/courses', [FrontentController::class, 'courses'])->name('courses');
 Route::get('/pricing', [FrontentController::class, 'pricing'])->name('pricing');
 Route::get('/toturs', [FrontentController::class, 'toturs'])->name('toturs');
 
+Route::get('/jobboard', [FrontentController::class, 'jobboard'])->name('jobboard');
+
+
 // Backend Routes ---------------------------------------------------
 Route::get('/db', function () {
     return view('dashboard.page.dashboard');

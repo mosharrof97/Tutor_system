@@ -40,7 +40,7 @@
         <ul>
           <li><a class="active" href="{{route('home')}}">Home</a></li>
           <li><a href="{{route('about')}}">Sign In</a></li>
-          <li><a href="{{route('about')}}">Job Board</a></li>
+          <li><a href="{{route('jobboard')}}">Job Board</a></li>
           <li><a href="{{route('about')}}">Become a Tuitor</a></li>
 
           {{-- <li><a href="{{route('about')}}">About</a></li>
