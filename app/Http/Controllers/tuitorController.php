@@ -60,31 +60,31 @@ class tuitorController extends Controller
 
     public Function store( Request $request ){
         
-        // $request->validate([
-        //     'tuition_id' => 'required',
-        //     'city_id' => 'required',
-        //     'location_id' => 'required',
-        //     'category_id' => 'required',
-        //     'class_id' => 'required',
-        //     'student_id' => 'required',
-        //     'student_gender' => 'required|max:100',
-        //     'tuitor_gender' => 'required|max:100',
-        //     'address' => 'required|max:200',
-        //     'institute_name' => 'required|max:200',
-        //     'student_id' => 'required',
-        //     'day_id' => 'required',
-        //     'tuition_time' => 'required',
-        //     'hire_date' => 'required',
-        //     'salary' => 'required|numeric',
-        //     'social_id' => 'required',
-        // ]);
+        $request->validate([
+            'tuition_id' => 'required',
+            'city_id' => 'required',
+            'location_id' => 'required',
+            'category_id' => 'required',
+            'class_id' => 'required',
+            'student_id' => 'required',
+            'student_gender' => 'required|max:100',
+            'tuitor_gender' => 'required|max:100',
+            'address' => 'required|max:200',
+            'institute_name' => 'required|max:200',
+            'student_id' => 'required',
+            'day_id' => 'required',
+            'tuition_time' => 'required',
+            'hire_date' => 'required',
+            'salary' => 'required|numeric',
+            'social_id' => 'required',
+        ]);
 
         // dd($request);
         // $data=[
         //     'tuitor_name'=> $request->tuitor_name,
         // ];
         Tuitor::create($request->all());
-        return Redirect::route('addtuitor')->with('success', 'tuitor Media Add successfull');
+        return Redirect::route('addtuitor')->with('success', 'tuitor Add successfull');
     }
 
     // ---------Update----------//
