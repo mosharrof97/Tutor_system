@@ -1,0 +1,113 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use App\Models\Tuitor;
+use App\Models\Tuition;
+use App\Models\City;
+use App\Models\Category;
+use App\Models\Student;
+use App\Models\Day;
+use App\Models\SocialMedia;
+use App\Models\Subject;
+use App\Models\StudentClass;
+use App\Models\Location;
+
+class tuitorController extends Controller
+{
+    // ---------Tuitor View----------//
+    public Function tuitor(){
+        $tuitor = Tuitor::orderBy('tuitor_id', 'desc')->get();
+        return view('dashboard\page\tuitor\alltuitor', compact('tuitor'));
+    }
+
+    // ---------Tuitor Add----------//
+    public Function addtuitor( Request $request){
+        $data=[
+            'tuition' =>Tuition::orderBy('tuition_name', 'ASC')->get(),
+            'city' =>City::orderBy('city_name', 'ASC')->get(),
+            'category' =>Category::orderBy('category_name', 'ASC')->get(),
+            'student' =>Student::orderBy('nb_of_student', 'ASC')->get(),
+            'day' =>Day::orderBy('day_name', 'ASC')->get(),
+            'social' =>SocialMedia::orderBy('social_name', 'ASC')->get(),
+            'class'=> StudentClass::orderBy('class_name', 'ASC')->get(),
+            'subject'=>Subject::orderBy('subject_name', 'ASC')->get(),
+            'location'=>Location::orderBy('location_name', 'ASC')->get(),
+
+        ];
+        
+
+        return view('dashboard.page.tuitor.addtuitor', $data);
+    }
+
+
+    public Function childOption( Request $category){
+        
+            $class= StudentClass::where('category_id', $category->category_id)->orderBy('class_name', 'ASC')->get();
+            $subject=Subject::where('subject_id', $request->subject_id)->orderBy('subject_name', 'ASC')->get();
+            $location=Location::where('location_id', $request->location_id)->orderBy('location_name', 'ASC')->get();
+        
+        
+        return response()->json([
+            'status'=> true,
+            'class' =>$class,
+            'subject' =>$subjec,
+            'location' =>$location,
+        ]);
+    }
+
+    public Function store( Request $request ){
+        
+        $request->validate([
+            'tuition_id' => 'required',
+            'city_id' => 'required',
+            'location_id' => 'required',
+            'category_id' => 'required',
+            'class_id' => 'required',
+            'student_id' => 'required',
+            'student_gender' => 'required|max:100',
+            'tuitor_gender' => 'required|max:100',
+            'address' => 'required|max:200',
+            'institute_name' => 'required|max:200',
+            'student_id' => 'required',
+            'day_id' => 'required',
+            'tuition_time' => 'required',
+            'hire_date' => 'required',
+            'salary' => 'required|numeric',
+            'social_id' => 'required',
+        ]);
+
+        // dd($request);
+        // $data=[
+        //     'tuitor_name'=> $request->tuitor_name,
+        // ];
+        Tuitor::create($request->all());
+        return Redirect::route('addtuitor')->with('success', 'tuitor Add successfull');
+    }
+
+    // ---------Update----------//
+    public Function edit($id){
+        $tuitor = Tuitor::where('tuitor_id', $id)->first();
+        return view('dashboard.page.tuitor.updatetuitor', compact('tuitor'));
+    }
+
+    public Function update(Request $request, $id){
+        $request->validate([
+            'tuitor_name' => 'required|max:100',
+        ]);
+        $data=[
+            'tuitor_name'=> $request->tuitor_name,
+        ];
+        Tuitor::where('tuitor_id', $id)->update($data);
+        return Redirect::route('tuitor')->with('success', 'tuitor Media Update Successfull');
+    }
+
+    // ---------Delete----------//
+    public Function delete( $id){
+        Tuitor::where('tuitor_id', $id)->delete();
+        return Redirect::route('tuitor')->with('success', 'tuitor Media Delete Successfull');
+    }
+
+}

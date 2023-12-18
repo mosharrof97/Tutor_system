@@ -23,6 +23,21 @@
                                 <span id="" class="form-text text-danger">{{ $message }}</span>
                             @enderror
                         </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="class_id">Class Name</label>
+                            <select name="class_id" id="class_id" class="form-control" >
+                                <option value="">Select Class Name</option>
+                            @foreach ( $class as $data )
+                                <option value="{{$data->class_id}}">{{$data->class_name}}</option>
+                            @endforeach
+                                
+                            </select>
+                            
+                            @error('class_id')
+                                <span id="" class="form-text text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
                        
                         <button type="submit" class="btn btn-primary">Add Subject</button>
                     </form>

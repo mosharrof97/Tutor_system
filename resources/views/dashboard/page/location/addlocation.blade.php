@@ -20,7 +20,7 @@
                             <label class="form-label" for="location_name">Location Name</label>
                             <input type="text" class="form-control" id="location_name" name="location_name" placeholder="location name">
 
-                            @error('tuition_type')
+                            @error('location_name')
                                 <span id="" class="form-text text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -36,7 +36,7 @@
                                 
                             </select>
                             
-                            @error('tuition_type')
+                            @error('city_id')
                                 <span id="" class="form-text text-danger">{{ $message }}</span>
                             @enderror
                         </div>

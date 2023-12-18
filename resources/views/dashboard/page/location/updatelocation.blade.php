@@ -27,7 +27,6 @@
 
                         <div class="mb-3">
                             <label class="form-label" for="city_name">City name</label>
-                            {{-- <input type="text" class="form-control" id="category_name" name="category_name" placeholder="category name"> --}}
                             <select name="city_id" id="city_name" class="form-control" >
                                 <option value="">Select City name</option>
                             @foreach ( $city as $data )

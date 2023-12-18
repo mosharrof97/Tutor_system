@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-    use App\Models\SocialMedia;
+use App\Models\SocialMedia;
 
 class socialMediaController extends Controller
 {

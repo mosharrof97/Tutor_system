@@ -16,6 +16,9 @@ class Tuitor extends Model
         'day_id',
         'student_id',
         'social_id',
+        'location_id',
+        'class_id',
+        'category_id',
 
         'student_gender',
         'tuitor_gender',
@@ -23,7 +26,7 @@ class Tuitor extends Model
         'institute_name',
         'tuition_time',
         'salary',
-        'about',
-        'date',
+        'more_about',
+        'hire_date',
     ];
 }
