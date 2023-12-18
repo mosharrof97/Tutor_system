@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->id('subject_id');
             $table->string('subject_name');
+            $table->foreignId('class_id');
             $table->rememberToken();
             $table->timestamps();
         });

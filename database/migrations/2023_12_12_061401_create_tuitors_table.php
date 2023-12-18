@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('tuitors', function (Blueprint $table) {
             $table->id('tuitor_id');
-            $table->integer('tuition_id');
-            $table->integer('city_id');
-            $table->integer('subject_id');
-            $table->integer('day_id');
-            $table->integer('student_id');
-            $table->integer('social_id');
+            $table->foreignId('tuition_id');
+            $table->foreignId('location_id');
+            $table->foreignId('class_id');
+            $table->foreignId('category_id');
+            $table->foreignId('city_id');
+            $table->foreignId('subject_id');
+            $table->foreignId('day_id');
+            $table->foreignId('student_id');
+            $table->foreignId('social_id');
 
             $table->string('student_gender');
             $table->string('tuitor_gender');
@@ -26,8 +29,8 @@ return new class extends Migration
             $table->string('institute_name');
             $table->time('tuition_time');
             $table->string('salary');
-            $table->string('about');
-            $table->date('date');
+            $table->string('more_about');
+            $table->date('hire_date');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\tuitorController;
 use App\Http\Controllers\tuitionController;
 use App\Http\Controllers\cityController;
 use App\Http\controllers\CategoryController;
@@ -49,13 +50,14 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//............Tanvir part-1..................................
-
-//........Tuitor ........................
-Route::get('/addtuitor', function () {
-    return view('dashboard.page.tuitor.addtuitor1');
-});
-
+//.....................Tuitor........................
+Route::get('/tuitor', [tuitorController::class, 'tuitor'])-> name('tuitor');
+Route::get('/childoption', [tuitorController::class, 'childOption'])-> name('childOption');
+Route::get('/addtuitor', [tuitorController::class, 'addtuitor'])-> name('addtuitor');
+Route::post('/addtuitor', [tuitorController::class, 'store'])-> name('tuitordata');
+Route::get('/update_tuitor/{id}', [tuitorController::class, 'edit'])-> name('tuitor.edit');
+Route::put('/update_tuitor/{id}', [tuitorController::class, 'update'])-> name('tuitor.update');
+Route::delete('/delete_tuitor/{id}', [tuitorController::class, 'delete'])-> name('tuitor.delete');
 
 //........Tuition ........................
 Route::get('/tuition', [tuitionController::class, 'tuition'])-> name('tuition');
@@ -65,8 +67,6 @@ Route::get('/update_tuition/{id}', [tuitionController::class, 'edit'])-> name('t
 Route::post('/update_tuition/{id}', [tuitionController::class, 'update'])-> name('tuition.update');
 Route::delete('/delete_tuition/{id}', [tuitionController::class, 'delete'])-> name('tuition.delete');
 
-
-
 //........City ........................
 Route::get('/city', [cityController::class, 'city'])-> name('city');
 Route::get('/addcity', [cityController::class, 'addcity'])-> name('addcity');
@@ -75,7 +75,7 @@ Route::get('/update_city/{id}', [cityController::class, 'edit'])-> name('city.ed
 Route::post('/update_city/{id}', [cityController::class, 'update'])-> name('city.update');
 Route::delete('/delete_city/{id}', [cityController::class, 'delete'])-> name('city.delete');
 
-//........Teacher Category....(tanvir)....................
+//.................Category....(tanvir)....................
 Route::get('/category', [CategoryController::class, 'category'])-> name('category');
 Route::get('/addcategory', [CategoryController::class, 'addcategory'])-> name('addcategory');
 Route::post('/addcategory', [CategoryController::class, 'store'])-> name('categorydata');
@@ -91,7 +91,6 @@ Route::get('/update_class/{id}', [classController::class, 'edit'])-> name('class
 Route::post('/update_class/{id}', [classController::class, 'update'])-> name('class.update');
 Route::delete('/delete_class/{id}', [classController::class, 'delete'])-> name('class.delete');
 
-
 //.....................Location ........................
 Route::get('/location', [locationController::class, 'location'])-> name('location');
 Route::get('/addlocation', [locationController::class, 'addlocation'])-> name('addlocation');
@@ -99,7 +98,6 @@ Route::post('/addlocation', [locationController::class, 'store'])-> name('locati
 Route::get('/update_location/{id}', [locationController::class, 'edit'])-> name('location.edit');
 Route::post('/update_location/{id}', [locationController::class, 'update'])-> name('location.update');
 Route::delete('/delete_location/{id}', [locationController::class, 'delete'])-> name('location.delete');
-
 
 //.....................Student ........................
 Route::get('/student', [studentController::class, 'student'])-> name('student');
