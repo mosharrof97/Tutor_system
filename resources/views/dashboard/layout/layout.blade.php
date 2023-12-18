@@ -130,12 +130,12 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
+                                <a href="{{route('tuitor')}}" class="menu-link">
                                     <div data-i18n="Account">All Tuitor</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="addtuitor" class="menu-link">
+                                <a href="{{route('addtuitor')}}" class="menu-link">
                                     <div data-i18n="Notifications">Add Tuitor</div>
                                 </a>
                             </li>

@@ -246,7 +246,7 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $("document").ready(function () {
             $('select[name="category_id"]').on('change', function () {
                 var catId = $(this).val();
@@ -267,6 +267,6 @@
                 }
             });
         });
-    </script>
+    </script> --}}
     
 @endsection
