@@ -80,9 +80,7 @@
                                     <label class="control-label fg-lable" for="class_id">Class / Course </label>
                                     <select name="class_id" id="class_id" class="form-control">
                                         <option value="">Select... </option>
-                                    @foreach ($class as $data)
-                                        <option value="{{$data->class_id}}">{{$data->class_name}}</option>
-                                    @endforeach
+
                                     </select>
 
                                     @error('class_id')
@@ -246,7 +244,7 @@
         </div>
     </div>
 
-    {{-- <script type="text/javascript">
+    <script type="text/javascript">
         $("document").ready(function () {
             $('select[name="category_id"]').on('change', function () {
                 var catId = $(this).val();
@@ -254,11 +252,14 @@
                     $.ajax({
                         url: '{{ route("childOption") }}',
                         type: "get",
+                        data: {category_id:catId},
                         dataType: "json",
                         success: function (data) {
-                            $('select[name="class_name"]').empty();
-                            $.each(data, function (key, value) {
-                                $('select[name="class_name"]').append('<option value=" ' + key + '">' + value + '</option>');
+                            let sclass = data['class'];
+                            $('#class_id').empty();
+                            console.log(sclass);
+                            $.each(sclass, function (index, element) {
+                                $('#class_id').append(`<option value = "${element.class_id}">${element.class_name}</option>`);
                             })
                         }
                     })
@@ -267,6 +268,6 @@
                 }
             });
         });
-    </script> --}}
+    </script>
     
 @endsection

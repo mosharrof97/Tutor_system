@@ -43,9 +43,9 @@ class tuitorController extends Controller
     }
 
 
-    public Function childOption( Request $category){
+    public Function childOption( Request $request){
         
-            $class= StudentClass::where('category_id', $category->category_id)->orderBy('class_name', 'ASC')->get();
+            $class= StudentClass::where('category_id', $request->category_id)->orderBy('class_name', 'ASC')->get();
             $subject=Subject::where('subject_id', $request->subject_id)->orderBy('subject_name', 'ASC')->get();
             $location=Location::where('location_id', $request->location_id)->orderBy('location_name', 'ASC')->get();
         
@@ -53,7 +53,7 @@ class tuitorController extends Controller
         return response()->json([
             'status'=> true,
             'class' =>$class,
-            'subject' =>$subjec,
+            'subject' =>$subject,
             'location' =>$location,
         ]);
     }
