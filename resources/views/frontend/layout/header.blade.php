@@ -49,10 +49,10 @@
           <li><a href="{{route('pricing')}}">Pricing</a></li> --}}
           <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="#">Blog Details</a></li>
+              <li class="dropdown"><a href="#"><span>Update</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Educational</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
                   <li><a href="#">Deep Drop Down 3</a></li>
                   <li><a href="#">Deep Drop Down 4</a></li>
