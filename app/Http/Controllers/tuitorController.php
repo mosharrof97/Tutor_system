@@ -37,19 +37,19 @@ class tuitorController extends Controller
             'location'=>Location::orderBy('location_name', 'ASC')->get(),
 
         ];
-        
+
 
         return view('dashboard.page.tuitor.addtuitor', $data);
     }
 
 
     public Function childOption( Request $request){
-        
+
             $class= StudentClass::where('category_id', $request->category_id)->orderBy('class_name', 'ASC')->get();
             $subject=Subject::where('subject_id', $request->subject_id)->orderBy('subject_name', 'ASC')->get();
             $location=Location::where('location_id', $request->location_id)->orderBy('location_name', 'ASC')->get();
-        
-        
+
+
         return response()->json([
             'status'=> true,
             'class' =>$class,
@@ -59,7 +59,7 @@ class tuitorController extends Controller
     }
 
     public Function store( Request $request ){
-        
+
         $request->validate([
             'tuition_id' => 'required',
             'city_id' => 'required',
