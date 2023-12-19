@@ -52,9 +52,6 @@
                                     <label class="control-label fg-lable" for="location_id">Select Location  </label>
                                     <select name="location_id" id="location_id" class="form-control">
                                         <option value="">Select... </option>
-                                    @foreach ($location as $data)
-                                        <option value="{{$data->location_id}}">{{$data->location_name}}</option>
-                                    @endforeach
                                     </select>
 
                                     @error('location_id')
@@ -92,9 +89,6 @@
                                     <label class="control-label fg-lable" for="subject_id">Required Subjects</label>
                                     <select name="subject_id" id="subject_id" class="form-control">
                                         <option value="">Select... </option>
-                                    @foreach ($subject as $data)
-                                        <option value="{{$data->subject_id}}">{{$data->subject_name}}</option>
-                                    @endforeach
                                     </select>
 
                                     @error('subject_id')
@@ -131,8 +125,7 @@
 
                                 <div class="form-group mb-3">
                                     <label for="address" class="control-label fg-lable">Address Details </label>
-                                    <textarea name="address" id="address" class="form-control fg-textarea" placeholder="E.g: Flat: Level: 2, Rangs Naharz, House: 14, Road: Shahjalal Avenue, Sector 4, Uttara, Dhaka 1230" style="height: 120px;">
-                                    </textarea>
+                                    <textarea name="address" id="address" class="form-control fg-textarea" placeholder="E.g: Flat: Level: 2, Rangs Naharz, House: 14, Road: Shahjalal Avenue, Sector 4, Uttara, Dhaka 1230" style="height: 120px;"></textarea>
 
                                     @error('address')
                                         <span id="" class="form-text text-danger">{{ $message }}</span>
@@ -226,8 +219,7 @@
 
                                 <div class="form-group mb-3">
                                     <label for="more_about" class="control-label fg-lable">More about your requirement </label>
-                                    <textarea name="more_about" id="more_about" class="form-control fg-textarea" placeholder="E.g: Flat: Level: 2, Rangs Naharz, House: 14, Road: Shahjalal Avenue, Sector 4, Uttara, Dhaka 1230" style="height: 120px;">
-                                    </textarea>
+                                    <textarea name="more_about" id="more_about" class="form-control fg-textarea" placeholder="E.g: Flat: Level: 2, Rangs Naharz, House: 14, Road: Shahjalal Avenue, Sector 4, Uttara, Dhaka 1230" style="height: 120px;"></textarea>
 
                                     @error('more_about')
                                         <span id="" class="form-text text-danger">{{ $message }}</span>
@@ -246,7 +238,30 @@
 
     <script type="text/javascript">
         $("document").ready(function () {
-            $('select[name="category_id"]').on('change', function () {
+
+            $('#city_id').on('change', function () {
+                var cityId = $(this).val();
+                if (cityId) {
+                    $.ajax({
+                        url: '{{ route("childOption") }}',
+                        type: "get",
+                        data: {city_id:cityId},
+                        dataType: "json",
+                        success: function (data) {
+                            let location = data['location'];
+                            $('#location_id').find("option").not(":first").remove();
+                            // console.log(sclass);
+                            $.each(location, function (index, element) {
+                                $('#location_id').append(`<option value = "${element.location_id}">${element.location_name}</option>`);
+                            })
+                        }
+                    })
+                } else {
+                    $('#location_id').empty();
+                }
+            });
+
+            $('#category').on('change', function () {
                 var catId = $(this).val();
                 if (catId) {
                     $.ajax({
@@ -256,17 +271,41 @@
                         dataType: "json",
                         success: function (data) {
                             let sclass = data['class'];
-                            $('#class_id').empty();
-                            console.log(sclass);
+                            $('#class_id').find("option").not(":first").remove();
+                            // console.log(sclass);
                             $.each(sclass, function (index, element) {
                                 $('#class_id').append(`<option value = "${element.class_id}">${element.class_name}</option>`);
                             })
                         }
                     })
                 } else {
-                    $('select[name="class_name"]').empty();
+                    $('#class_id').empty();
                 }
+
+               $('#class_id').on('change', function(){
+                    var classId = $(this).val();
+                    if (catId) {
+                        $.ajax({
+                            url:'{{route("childOption") }}',
+                            type:"get",
+                            data:{class_id: classId},
+                            dataType:"json",
+                            success: function(res){
+                                let subject = res['subject'];
+                                // console.log(subject);
+                                $('#subject_id').find("option").not(":first").remove();
+                                $.each(subject, function(index, element){
+                                    $('#subject_id').append(`<option value = "${element.subject_id}"> ${element.subject_name}</option>`)
+                                })
+                            }
+                        })
+                    } else {
+                        $('#subject_id').empty();
+                    }
+               } )
             });
+
+            
         });
     </script>
     
