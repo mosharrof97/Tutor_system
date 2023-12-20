@@ -23,6 +23,12 @@ use App\Http\Controllers\jobBoardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Login From Routes ---------------------------------------------------
+Route::get('/login', function () {
+    return view('login.frontend.login.login');
+});
+
+
 // Frontend Routes -------------------------------------------
 Route::get('/', [FrontentController::class, 'index'])->name('home');
 Route::get('/aboutUs', [FrontentController::class, 'about'])->name('about');

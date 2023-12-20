@@ -32,17 +32,17 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-  <div class="container-fluid bg-info">
+
+    <div class="container-fluid bg-info">
     <div class="container d-flex align-items-center">
     <div class="col-md-6">
     <span>+88 09613 441122</span>
     </div>
     <div class="col-md-6 text-end">
-            <span>Fb</span>
-            <span>Fb</span>
-            <span>Fb</span>
-            <span>Fb</span>
-
+            <span><a href=""><i class="bi bi-twitter"></i></a></span>
+            <span><a href=""><i class="bi bi-facebook"></i></a></span>
+            <span> <a href=""><i class="bi bi-instagram"></i></a></span>
+            <span>  <a href=""><i class="bi bi-linkedin"></i></a></span>
     </div>
     </div>
   </div>
