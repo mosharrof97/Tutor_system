@@ -32,10 +32,25 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
+  <div class="container-fluid bg-info">
     <div class="container d-flex align-items-center">
+    <div class="col-md-6">
+    <span>+88 09613 441122</span>
+    </div>
+    <div class="col-md-6 text-end">
+            <span>Fb</span>
+            <span>Fb</span>
+            <span>Fb</span>
+            <span>Fb</span>
+
+    </div>
+    </div>
+  </div>
+    <div class="container d-flex align-items-center">
+           <a href="#" class="logo" style="margin-right:5px"><img src="{{asset('assets/img/avatars/1.png')}}" alt="" class="img-fluid"></a>
+
       <h1 class="logo me-auto"><a href="{{route('home')}}">Tutors World</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-       <a href="#" class="logo me-auto"><img src="{{asset('frontend')}}/assets/img/avatars/1.png" alt="" class="img-fluid"></a>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="active" href="{{route('home')}}">Home</a></li>

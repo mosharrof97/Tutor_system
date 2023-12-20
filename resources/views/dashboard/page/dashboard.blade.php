@@ -6,7 +6,7 @@
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                            <h5 class="card-title text-primary">Congratulations Dear Admin! 🎉</h5>
                             <p class="mb-4">
                                 You have done <span class="fw-bold">72%</span> more sales today.
                                 Check your new badge in
@@ -49,8 +49,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="fw-semibold d-block mb-1">Profit</span>
-                            <h3 class="card-title mb-2">$12,628</h3>
+                            <span class="fw-semibol d-block mb-1">Tuitos</span>
+                            <h3 class="card-title mb-2">85</h3>
                             <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
                         </div>
                     </div>
@@ -75,9 +75,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <span>Sales</span>
-                            <h3 class="card-title text-nowrap mb-1">$4,679</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                            <span>Tuition post</span>
+                            <h3 class="card-title text-nowrap mb-1">170</h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +65.42%</small>
                         </div>
                     </div>
                 </div>
@@ -159,9 +159,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="d-block mb-1">Payments</span>
-                            <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                            <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                            <span class="d-block mb-1">Subjects</span>
+                            <h3 class="card-title text-nowrap mb-2">50</h3>
+                            <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -56.82%</small>
                         </div>
                     </div>
                 </div>
@@ -185,9 +185,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="fw-semibold d-block mb-1">Transactions</span>
-                            <h3 class="card-title mb-2">$14,857</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                            <span class="fw-semibold d-block mb-1">Guardian </span>
+                            <h3 class="card-title mb-2">95</h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +70.14%</small>
                         </div>
                     </div>
                 </div>

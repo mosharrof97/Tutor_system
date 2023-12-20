@@ -32,6 +32,12 @@ Route::get('/toturs', [FrontentController::class, 'toturs'])->name('toturs');
 
 Route::get('/jobboard', [FrontentController::class, 'jobboard'])->name('jobboard');
 
+// Tuitor Dashboard Routes ---------------------------------------------------
+Route::get('/tuitorpanel', function () {
+    return view('tuitorpanel.pages.dashboard');
+});
+
+
 
 // Backend Routes ---------------------------------------------------
 Route::get('/db', function () {

@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class=" col-11">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">City Name</h5>
+                    <h5 class="mb-0">Days </h5>
                     <small class="text-muted float-end">Default label</small>
                 </div>
                 <div class="card-body">
