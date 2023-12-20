@@ -12,6 +12,7 @@ use App\Http\Controllers\classController;
 use App\Http\Controllers\dayController;
 use App\Http\Controllers\subjectController;
 use App\Http\Controllers\socialMediaController;
+use App\Http\Controllers\jobBoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +31,10 @@ Route::get('/courses', [FrontentController::class, 'courses'])->name('courses');
 Route::get('/pricing', [FrontentController::class, 'pricing'])->name('pricing');
 Route::get('/toturs', [FrontentController::class, 'toturs'])->name('toturs');
 
-Route::get('/jobboard', [FrontentController::class, 'jobboard'])->name('jobboard');
+
+// Job Board Routes ---------------------------------------------------
+Route::get('/jobboard', [jobBoardController::class, 'jobboard'])->name('jobboard');
+Route::get('/jobdetails/{id}', [jobBoardController::class, 'jobDetails'])->name('jobdetails');
 
 // Tuitor Dashboard Routes ---------------------------------------------------
 Route::get('/tuitorpanel', function () {

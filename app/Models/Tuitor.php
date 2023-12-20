@@ -28,5 +28,6 @@ class Tuitor extends Model
         'salary',
         'more_about',
         'hire_date',
+        'status',
     ];
 }

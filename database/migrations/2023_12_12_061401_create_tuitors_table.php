@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('salary');
             $table->string('more_about');
             $table->date('hire_date');
+            $table->integer('status')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

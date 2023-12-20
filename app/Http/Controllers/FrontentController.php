@@ -36,11 +36,6 @@ class FrontentController extends Controller
     }
 
 
-    public function jobboard()
-    {
-        return view ('frontend.page.jobboard');
-    }
-
     public function destroy(string $id)
     {
         //
