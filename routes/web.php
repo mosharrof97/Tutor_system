@@ -37,6 +37,10 @@ Route::get('/tuitorpanel', function () {
     return view('tuitorpanel.pages.dashboard');
 });
 
+// Guardian Dashboard Routes ---------------------------------------------------
+Route::get('/guardian', function () {
+    return view('guardian.pagess.dashboard');
+});
 
 
 // Backend Routes ---------------------------------------------------
