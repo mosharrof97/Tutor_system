@@ -24,8 +24,8 @@ use App\Http\Controllers\jobBoardController;
 |
 */
 // Login From Routes ---------------------------------------------------
-Route::get('/login', function () {
-    return view('login.frontend.login.login');
+Route::get('/mylogin', function () {
+    return view('frontend.loginfrom.login');
 });
 
 
