@@ -13,6 +13,8 @@ use App\Http\Controllers\dayController;
 use App\Http\Controllers\subjectController;
 use App\Http\Controllers\socialMediaController;
 use App\Http\Controllers\jobBoardController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +28,10 @@ use App\Http\Controllers\jobBoardController;
 // Login From Routes ---------------------------------------------------
 Route::get('/mylogin', function () {
     return view('frontend.loginfrom.login');
+});
+
+Route::get('/signup', function () {
+    return view('frontend.loginfrom.signup');
 });
 
 
