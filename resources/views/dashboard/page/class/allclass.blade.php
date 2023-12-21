@@ -17,7 +17,7 @@
                     <tr>
                         <td>{{$data->class_id}}</td>
                         <td>{{$data->class_name}}</td>
-                        <td>{{$data->category_name}}</td>
+                        <td>{{$data->category->category_name}}</td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

@@ -11,7 +11,8 @@ class classController extends Controller
 {
    // ---------Class View----------//
    public Function allclass(){
-    $class = StudentClass::orderBy('class_id', 'desc') ->get();
+    $class = StudentClass:: with('category')->orderBy('class_id', 'desc')->get();
+    // $category = $class->category;
     return view('dashboard.page.class.allclass', compact('class'));
 }
 

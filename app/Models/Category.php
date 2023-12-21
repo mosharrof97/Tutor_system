@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'category_id';
     protected $fillable = [
         'category_id',
         'category_name',
@@ -16,7 +17,7 @@ class Category extends Model
 
     public function studentClass(): HasMany
     {
-        return $this->hasMany(StudentClass::class);
+        return $this->hasMany(StudentClass::class,'category_id');
     }
 
     

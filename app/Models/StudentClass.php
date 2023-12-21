@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class StudentClass extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'class_id';
     protected $fillable = [
         'class_id',
         'class_name',
@@ -18,7 +19,7 @@ class StudentClass extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
 }
