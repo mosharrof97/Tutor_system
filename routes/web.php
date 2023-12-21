@@ -34,6 +34,10 @@ Route::get('/signup', function () {
     return view('frontend.loginfrom.signup');
 });
 
+Route::get('/register2', function () {
+    return view('frontend.loginfrom.register');
+});
+
 
 // Frontend Routes -------------------------------------------
 Route::get('/', [FrontentController::class, 'index'])->name('home');

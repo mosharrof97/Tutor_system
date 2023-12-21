@@ -21,6 +21,7 @@
   <link href="{{asset('frontend')}}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="{{asset('frontend')}}/assets/css/style.css" rel="stylesheet">
+  <link href="{{asset('frontend/assets/css/signup.css')}}" rel="stylesheet">
   <!-- =======================================================
   * Template Name: Mentor
   * Updated: Sep 18 2023 with Bootstrap v5.3.2
