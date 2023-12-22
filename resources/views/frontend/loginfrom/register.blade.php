@@ -3,125 +3,197 @@
     <div class="page-content">
         <div class="form-v8-content">
             <div class="form-left">
-                <img src="{{asset('frontend/assets/img/bag.jpg')}}" alt="form">
+                <img src="{{ asset('frontend/assets/img/bag.jpg') }}" alt="form">
             </div>
-            
+
             <div class="form-right">
                 <div class="tab">
                     <div class="tab-inner">
                         <button class="tablinks" onclick="openCity(event, 'guardian')" id="defaultOpen">
-                            Guardian or  Student
+                            Guardian or Student
                         </button>
                     </div>
                     <div class="tab-inner">
                         <button class="tablinks" onclick="openCity(event, 'tuitor')">Tuitor</button>
                     </div>
                 </div>
-                <form class="form-detail" action="#" method="post">
+
+                {{-- Guardian --}}
+                <form class="form-detail" action="{{route('guardian_register')}}" method="post">
+                    @csrf
+
                     <div class="tabcontent" id="guardian">
-                        <div class="form-row">
+                        <div class="form-row mb-4">
                             <label class="form-row-inner">
-                                <input type="text" name="full_name" id="full_name" class="input-text" required>
+                                <input type="text" name="name" id="name" class="input-text" >
                                 <span class="label">Name</span>
                                 <span class="border"></span>
                             </label>
-                        </div>
-                        <div class="form-row d-flex">
-                            <label class="form-row-inner me-2">
-                                <input type="text" name="your_email" id="your_email" class="input-text" required>
-                                <span class="label">Number</span>
-                                <span class="border"></span>
-                            </label>
 
-                            <label class="form-row-inner ms-2">
-                                <input type="text" name="your_email" id="your_email" class="input-text" required>
-                                <span class="label">E-Mail</span>
-                                <span class="border"></span>
-                            </label>
-                        </div>
-                        <div class="form-row d-flex">
-                            <label class="form-row-inner me-2">
-                                <input type="password" name="password" id="password" class="input-text" required>
-                                <span class="label">Password</span>
-                                <span class="border"></span>
-                            </label>
-                       
-                            <label class="form-row-inner ms-2">
-                                <input type="password" name="comfirm_password" id="comfirm_password" class="input-text"
-                                    required>
-                                <span class="label">Comfirm Password</span>
-                                <span class="border"></span>
-                            </label>
+                            @error('name')
+                                <span id="" class="form-text text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
-                        <div class="form-row-last">
-                            <input type="submit" name="register" class="register" value="Register">
-                        </div>
-                    </div>
-                </form>
+                        <div class="form-row d-flex mb-4">
+                            <div class=" form-row-inner  me-2 ">
+                                <label class="form-row-inner ">
+                                    <input type="text" name="number" id="number" class="input-text mb-1" >
+                                    <span class="label">Number</span>
+                                    <span class="border"></span>
+                                </label>
 
-                <form class="form-detail" action="#" method="post">
-                    <div class="tabcontent" id="tuitor">
+                                @error('number')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-                        <div class="form-row d-flex">
-                            
-                            <label class="form-row-inner me-2">
-                                <input type="text" name="full_name" id="full_name" class="input-text" required>
-                                <span class="label">Name</span>
-                                <span class="border"></span>
-                            </label>
-                           
-                            <div class="form-row-inner ms-2">
-                                <label for=""> Gender</label>
-                                <div class=" d-flex">
-                                <div class="form-check me-2">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                     Male
-                                    </label>
-                                  </div>
-                                  <div class="form-check ms-2">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                      Female
-                                    </label>
-                                  </div>
+                            <div class=" form-row-inner  ms-2">
+                                <label class="form-row-inner ">
+                                    <input type="text" name="email" id="email" class="input-text mb-1" >
+                                    <span class="label">E-Mail</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('email')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
+
+                        <div class="form-row d-flex mb-4">
+                            <div class="form-row-inner  me-2">
+                                <label class="form-row-inner">
+                                    <input type="password" name="password" id="password" class="input-text" >
+                                    <span class="label">Password</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('password')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-row-inner  ms-2">
+                                <label class="form-row-inner ">
+                                    <input type="password" name="password_confirmation" id="password_confirmation" class="input-text"
+                                        >
+                                    <span class="label">Comfirm Password</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('password_confirmation')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
 
-                        <div class="form-row d-flex">
-                            <label class="form-row-inner me-2">
-                                <input type="text" name="your_email" id="your_email" class="input-text" required>
-                                <span class="label">Number</span>
-                                <span class="border"></span>
-                            </label>
-
-                            <label class="form-row-inner ms-2">
-                                <input type="text" name="your_email" id="your_email" class="input-text" required>
-                                <span class="label">E-Mail</span>
-                                <span class="border"></span>
-                            </label>
+                        <div class="form-row-last">
+                            <input type="submit" name="register" class="register" value="Register">
                         </div>
-                        <div class="form-row d-flex">
-                            <label class="form-row-inner me-2">
-                                <input type="password" name="password" id="password" class="input-text" required>
-                                <span class="label">Password</span>
-                                <span class="border"></span>
-                            </label>
-                       
-                            <label class="form-row-inner ms-2">
-                                <input type="password" name="comfirm_password" id="comfirm_password" class="input-text"
-                                    required>
-                                <span class="label">Comfirm Password</span>
-                                <span class="border"></span>
-                            </label>
+                    </div>
+                </form>
+                {{-- Guardian --}}
+
+                {{-- Tuitor --}}
+                <form class="form-detail" action="{{route('tuitor_register')}}" method="post">
+                    @csrf
+
+                    <div class="tabcontent" id="tuitor">
+
+                        <div class="form-row d-flex mb-4">
+                            <div class=" form-row-inner me-2">
+
+                                <label class="form-row-inner ">
+                                    <input type="text" name="name" id="name" class="input-text" >
+                                    <span class="label">Name</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('name')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-row-inner  ms-2">
+
+                                <label class="form-row-inner ">
+                                    <select name="gender" id="gender" class="input-text">
+                                        <option value="">Select... </option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Any">Any</option>
+                                    </select>
+                                    <span class="label">Gender</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('gender')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+
+                            </div>
+                        </div>
+
+                        <div class="form-row d-flex mb-4">
+                            <div class="form-row-inner  me-2">
+                                <label class="form-row-inner ">
+                                    <input type="text" name="number" id="number" class="input-text" >
+                                    <span class="label">Number</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('number')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-row-inner  ms-2">
+                                <label class="form-row-inner ">
+                                    <input type="text" name="email" id="email" class="input-text" >
+                                    <span class="label">E-Mail</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('email')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-row d-flex mb-4">
+
+                            <div class="form-row-inner  me-2">
+                                <label class="form-row-inner ">
+                                    <input type="password" name="password" id="password" class="input-text" >
+                                    <span class="label">Password</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('password')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-row-inner  ms-2">
+                                <label class="form-row-inner">
+                                    <input type="password" name="password_confirmation" id="password_confirmation"
+                                        class="input-text" >
+                                    <span class="label">Comfirm Password</span>
+                                    <span class="border"></span>
+                                </label>
+
+                                @error('password_confirmation')
+                                    <span id="" class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-row-last">
                             <input type="submit" name="register" class="register" value="Register">
                         </div>
                     </div>
                 </form>
+                {{-- Tuitor --}}
+
             </div>
         </div>
     </div>

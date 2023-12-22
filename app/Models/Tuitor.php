@@ -10,6 +10,7 @@ class Tuitor extends Model
     use HasFactory;
     protected $fillable = [
         'tuitor_id',
+        'user_id',
         'tuition_id',
         'city_id',
         'subject_id',

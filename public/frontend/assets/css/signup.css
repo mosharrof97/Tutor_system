@@ -121,7 +121,7 @@
     -ms-transition: all .15s ease;
 }
 .form-v8-content .form-detail .input-text {
-	margin-bottom: 31px;
+	margin-bottom: 6px;
 /* }
 .form-v8-content .form-detail input { */
 	width: 100%;
@@ -149,6 +149,11 @@
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
+
+option {
+    background-color: #8eb3e9;
+}
+
 .form-v8-content .form-detail .form-row .input-text:focus{
 	border-bottom: 1px solid #53c83c;
 	background: transparent;

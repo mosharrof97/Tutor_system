@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Models\Tuitor;
 
 class jobBoardController extends Controller
@@ -18,4 +20,18 @@ class jobBoardController extends Controller
         $data['tuitor'] = Tuitor:: where('tuitor_id', $id)->first();
         return view('jobBoard.page.jobDetails', $data);
     }
+
+    public function apply($id){
+        $userRole = Auth::user()->role;
+        if( $userRole == 3){
+            if( $userRole == 3){
+
+            }else{
+    
+            }
+        }else{
+
+        }
+    }
+
 }

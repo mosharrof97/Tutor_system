@@ -122,7 +122,13 @@
                     </div>
 
                     <div class=" d-flex justify-content-between mt-3">
-                        <button class="text-sm btn btn-primary rounded-pill">Apply</button>
+                        <form action="{{route('apply',$tuitor->tuitor_id)}}" method="post">
+                            @csrf
+
+                            <input type="submit" class="text-sm btn btn-primary rounded-pill" value="Apply">
+                            {{-- <a class="text-sm btn btn-primary rounded-pill">Apply</a> --}}
+                        </form>
+                        
                     </div>
 
                 </div>

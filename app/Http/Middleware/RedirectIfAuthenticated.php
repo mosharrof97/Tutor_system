@@ -21,7 +21,19 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+
+                    $url = '';
+                    if (Auth()->user()->role== 1) {
+                        $url = '/dashboard';
+                    } elseif (Auth()->user()->role == 2) {
+                        $url = route('guardian');
+                    }elseif (Auth()->user()->role == 3) {
+                        $url = route('tuitorpanel');
+                    }
+                    return redirect($url);
+                
+                // return redirect(RouteServiceProvider::HOME);
+                // return redirect('/dashboard');
             }
         }
 
