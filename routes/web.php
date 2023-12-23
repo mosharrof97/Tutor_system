@@ -14,7 +14,7 @@ use App\Http\Controllers\subjectController;
 use App\Http\Controllers\socialMediaController;
 use App\Http\Controllers\jobBoardController;
 
-
+use App\Http\Controllers\guardian\guardianTuitorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,7 +55,7 @@ Route::get('/tuitorpanel', function () {
 
 // Guardian Dashboard Routes ---------------------------------------------------
 Route::get('/guardian', function () {
-    return view('guardian.pagess.dashboard');
+    return view('guardian.pages.dashboard');
 })->name('guardian');
 
 
@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('admin')->middleware(['auth', 'checkRole:1'])->group(function () {
+Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () {
     //.....................Tuitor........................
     Route::get('/tuitor', [tuitorController::class, 'tuitor'])-> name('tuitor');
     Route::get('/childoption', [tuitorController::class, 'childOption'])-> name('childOption');
@@ -161,14 +161,14 @@ Route::prefix('admin')->middleware(['auth', 'checkRole:1'])->group(function () {
     Route::delete('/delete_socialmedia/{id}', [socialMediaController::class, 'delete'])-> name('social.delete');
 });
 
-Route::prefix('guardian')->middleware(['auth', 'checkRole:2'])->group(function () {
+// Route::prefix('guardian')->middleware(['auth', 'checkRole:2'])->group(function () {
     //.....................Tuitor........................
-    Route::get('/tuitor', [tuitorController::class, 'tuitor'])-> name('tuitor');
-    Route::get('/childoption', [tuitorController::class, 'childOption'])-> name('childOption');
-    Route::get('/addtuitor', [tuitorController::class, 'addtuitor'])-> name('addtuitor');
-    Route::post('/addtuitor', [tuitorController::class, 'store'])-> name('tuitordata');
-    Route::get('/update_tuitor/{id}', [tuitorController::class, 'edit'])-> name('tuitor.edit');
-    Route::put('/update_tuitor/{id}', [tuitorController::class, 'update'])-> name('tuitor.update');
-    Route::delete('/delete_tuitor/{id}', [tuitorController::class, 'delete'])-> name('tuitor.delete');
-});
+    Route::get('/tuitor', [guardianTuitorController::class, 'tuitor'])-> name('guardian_tuitor');
+    Route::get('/childoption', [guardianTuitorController::class, 'childOption'])-> name('childOption_guardian');
+    Route::get('/guardian_addtuitor', [guardianTuitorController::class, 'addtuitor'])-> name('guardian_addtuitor');
+    Route::post('/guardian_addtuitor', [guardianTuitorController::class, 'store'])-> name('guardian_tuitordata');
+    Route::get('/update_tuitor/{id}', [guardianTuitorController::class, 'edit'])-> name('guardian_tuitor.edit');
+    Route::put('/update_tuitor/{id}', [guardianTuitorController::class, 'update'])-> name('guardian_tuitor.update');
+    Route::delete('/delete_tuitor/{id}', [guardianTuitorController::class, 'delete'])-> name('guardian_tuitor.delete');
+// });
 require __DIR__.'/auth.php';

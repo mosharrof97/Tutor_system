@@ -1,0 +1,1 @@
+@extends('guardian\layout\layout')
