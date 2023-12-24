@@ -22,7 +22,8 @@ class guardianTuitorController extends Controller
 {
     // ---------Tuitor View----------//
     public Function tuitor(){
-        $tuitor = Tuitor::orderBy('tuitor_id', 'desc')->get();
+        $user = Auth::user()->id;
+        $tuitor = Tuitor::where('user_id',$user)->orderBy('tuitor_id', 'desc')->get();
         return view('guardian.pages.tuitor.alltuitor', compact('tuitor'));
     }
 

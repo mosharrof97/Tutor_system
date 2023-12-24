@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Tuitor;
 use App\Models\Tuition;
 use App\Models\City;
@@ -80,7 +81,9 @@ class tuitorController extends Controller
         // $data=[
         //     'tuitor_name'=> $request->tuitor_name,
         // ];
-        Tuitor::create($request->all());
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        Tuitor::create($data);
         return Redirect::route('addtuitor')->with('success', 'tuitor Add successfull');
     }
 

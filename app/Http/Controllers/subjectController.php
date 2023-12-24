@@ -11,13 +11,13 @@ class subjectController extends Controller
 {
     // ---------subject View----------//
     public Function subject(){
-        $subject = Subject::orderBy('subject_id', 'desc')->get();
+        $subject = Subject::with('studentClass')->orderBy('subject_id', 'desc')->get();
         return view('dashboard\page\subject\allsubject', compact('subject'));
     }
 
     // ---------subject Add----------//
     public Function addsubject(){
-        $class = StudentClass::get();
+        $class = StudentClass::with('category')->get();
         return view('dashboard\page\subject\addsubject', compact('class') );
     }
 

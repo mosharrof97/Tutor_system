@@ -55,7 +55,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="active" href="{{route('home')}}">Home</a></li>
-          <li><a href="{{route('about')}}">Sign In</a></li>
+          <li><a href="{{route('login')}}">Sign In</a></li>
           <li><a href="{{route('jobboard')}}">Job Board</a></li>
           <li><a href="{{route('about')}}">Become a Tuitor</a></li>
 

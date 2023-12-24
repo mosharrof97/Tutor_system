@@ -31,12 +31,12 @@
                   
                     <tr>
                         <td>{{$data->tuitor_id}}</td>
-                        <td>{{$data->tuition_id}}</td>
-                        <td>{{$data->city_id}}</td>
+                        <td>{{$data->tuition->tuition_name}}</td>
+                        <td>{{$data->city->city_name}}</td>
                         <td>{{$data->address}}</td>
-                        <td>{{$data->category_id}}</td>
-                        <td>{{$data->class_id}}</td>
-                        <td>{{$data->subject_id}}</td>
+                        <td>{{$data->category->category_name}}</td>
+                        <td>{{$data->studentClass->class_name}}</td>
+                        <td>{{$data->subject->subject_name}}</td>
                         <td>{{$data->salary}}</td>
                         <td>
                             <div class="dropdown">
@@ -46,14 +46,11 @@
                                 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{route('guardian_tuitor.edit',$data->tuitor_id)}}"><i class="bx bx-edit-alt me-1"></i>  Edit</a>
-                                    <div class="dropdown-item"> 
-                                        <form action="{{route('guardian_tuitor.delete',$data->tuitor_id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="bx bx-trash me-1"></i>Delete</button>
-                                          </form>
-                                    </div>
+
+                                    <a class="dropdown-item" href="{{route('job_seeker',$data->tuitor_id)}}"><i class="bx bx-edit-alt me-1"></i>  View Job Seeker </a>
+                                    
                                 </div>
+                                
 
                             </div>
                         </td>

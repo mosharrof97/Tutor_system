@@ -15,6 +15,9 @@ use App\Http\Controllers\socialMediaController;
 use App\Http\Controllers\jobBoardController;
 
 use App\Http\Controllers\guardian\guardianTuitorController;
+
+use App\Http\Controllers\tuitor\applyController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,50 +38,52 @@ Route::get('/signup', function () {
 });
 
 
-// Frontend Routes -------------------------------------------
+//======================= Frontend Routes =======================//
 Route::get('/', [FrontentController::class, 'index'])->name('home');
 Route::get('/aboutUs', [FrontentController::class, 'about'])->name('about');
 Route::get('/contact', [FrontentController::class, 'contact'])->name('contact');
 Route::get('/courses', [FrontentController::class, 'courses'])->name('courses');
 Route::get('/pricing', [FrontentController::class, 'pricing'])->name('pricing');
 Route::get('/toturs', [FrontentController::class, 'toturs'])->name('toturs');
+//======================= Frontend Routes =======================//
 
 
-// Job Board Routes ---------------------------------------------------
+//==================== Job Board Routes =========================//
 Route::get('/jobboard', [jobBoardController::class, 'jobboard'])->name('jobboard');
 Route::get('/jobdetails/{id}', [jobBoardController::class, 'jobDetails'])->name('jobdetails');
-
-// Tuitor Dashboard Routes ---------------------------------------------------
-Route::get('/tuitorpanel', function () {
-    return view('tuitorpanel.pages.dashboard');
-})->name('tuitorpanel');
-
-// Guardian Dashboard Routes ---------------------------------------------------
-Route::get('/guardian', function () {
-    return view('guardian.pages.dashboard');
-})->name('guardian');
+//==================== Job Board Routes =========================//
 
 
 // Backend Routes ---------------------------------------------------
-Route::get('/db', function () {
-    return view('dashboard.page.dashboard');
-});
+// Route::get('/db', function () {
+//     return view('dashboard.page.dashboard');
+// });
 
-Route::get('/form', function () {
-    return view('dashboard.page.form.baseForm');
-});
+// Route::get('/form', function () {
+//     return view('dashboard.page.form.baseForm');
+// });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.page.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
+
+//===================== Auth Common  Routes =====================//
 Route::middleware('auth')->group(function () {
+    Route::post('/apply/{id}', [applyController::class, 'apply'])-> name('apply');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+//===================== Auth Common  Routes =====================//
 
+
+//===================== Admin  Routes =====================//
 Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () {
+
+    //.....................Admin dashboard........................
+    Route::get('/', function () {
+        return view('dashboard.page.dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+
     //.....................Tuitor........................
     Route::get('/tuitor', [tuitorController::class, 'tuitor'])-> name('tuitor');
     Route::get('/childoption', [tuitorController::class, 'childOption'])-> name('childOption');
@@ -160,8 +165,17 @@ Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () 
     Route::put('/update_socialmedia/{id}', [socialMediaController::class, 'update'])-> name('social.update');
     Route::delete('/delete_socialmedia/{id}', [socialMediaController::class, 'delete'])-> name('social.delete');
 });
+//================================ Admin  Routes =================================//
 
-// Route::prefix('guardian')->middleware(['auth', 'checkRole:2'])->group(function () {
+
+// ====================== Guardian  Routes ========================//
+Route::prefix('guardian')->middleware(['auth', 'checkRole:2'])->group(function () {
+
+    //........................... Guardian Dashboard .........................
+    Route::get('/', function () {
+        return view('guardian.pages.dashboard');
+    })->name('guardian');
+
     //.....................Tuitor........................
     Route::get('/tuitor', [guardianTuitorController::class, 'tuitor'])-> name('guardian_tuitor');
     Route::get('/childoption', [guardianTuitorController::class, 'childOption'])-> name('childOption_guardian');
@@ -170,5 +184,25 @@ Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () 
     Route::get('/update_tuitor/{id}', [guardianTuitorController::class, 'edit'])-> name('guardian_tuitor.edit');
     Route::put('/update_tuitor/{id}', [guardianTuitorController::class, 'update'])-> name('guardian_tuitor.update');
     Route::delete('/delete_tuitor/{id}', [guardianTuitorController::class, 'delete'])-> name('guardian_tuitor.delete');
-// });
+});
+
+// .....................Job Seeker........................
+Route::get('/job_seeker/{id}', [applyController::class, 'jobSeeker'])-> name('job_seeker');
+Route::post('/apply_accept/{id}', [applyController::class, 'accept'])-> name('apply_accept');
+
+// ====================== Guardian  Routes ========================//
+
+
+// ====================== Tuitor  Routes =======================//
+Route::prefix('tuitor')->middleware(['auth', 'checkRole:3'])->group(function () {
+    // Tuitor Dashboard Routes ---------------------------------------------------
+    Route::get('/tuitorpanel', function () {
+        return view('tuitorpanel.pages.dashboard');
+    })->name('tuitorpanel');
+
+    // Route::post('/apply/{id}', [applyController::class, 'apply'])-> name('apply');
+
+});
+// ====================== Tuitor  Routes =======================//
+
 require __DIR__.'/auth.php';

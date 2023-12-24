@@ -135,11 +135,41 @@
                     </li>
 
 
+                    {{-- <li class="menu-item">
+                        <a class="menu-link menu-toggle" href="{{route('tuitor')}}">
+                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                            <div data-i18n="Account Settings">Posted Jobs </div>
+                        </a>
+                    </li> --}}
+
+                    {{-- <li class="menu-item">
+                        <a class="menu-link menu-toggle" href="{{route('guardian_addtuitor')}}">
+                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                            <div data-i18n="Account Settings">Job Post</div>
+                        </a>
+                    </li> --}}
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Account Settings">Job Board</div>
+                            <div data-i18n="Account Settings">Posted Jobs  </div>
                         </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="{{route('guardian_tuitor')}}" class="menu-link">
+                                    <div data-i18n="Account">Posted Jobs </div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('guardian_addtuitor')}}" class="menu-link">
+                                    <div data-i18n="Notifications">Job Post</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="pages-account-settings-connections.html" class="menu-link">
+                                    <div data-i18n="Connections">Delete Location</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="menu-item">

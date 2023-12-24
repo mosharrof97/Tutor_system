@@ -10,9 +10,9 @@
         <div class="col-lg-6">
             <div class="shadow card h-100">
                 <div class="card-body p-4">
-                    <h4 class="card-title font-weight-bold">Need {{$data->category_id}} Tutor For {{$data->class_id}} Student  - {{$data->day_id}}</h4>
+                    <h4 class="card-title font-weight-bold">Need {{$data->category->category_name}} Tutor For {{$data->studentClass->class_name}} Student  - {{$data->day->day_name}}</h4>
                     <p class="mt-3 mb-2 text-sm text-muted">
-                        <span>JobId: <b>{{$data->tuitor_id}}</b></span> |
+                        <span>JobId: <b>{{1000 + $data->tuitor_id}}</b></span> |
                         <span>Posted Date: <b>{{$data->created_at}}</b></span>
                     </p>
 
@@ -21,7 +21,7 @@
                             <i class="bi bi-book text-primary me-1"></i><br>
                             <div>
                                 <h6 class="text-sm">Tuition Type</h6>
-                                <span class="text-xs">{{$data->tuition_id}}</span>
+                                <span class="text-xs">{{$data->tuition->tuition_name}}</span>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             <i class="bi bi-book text-warning me-1"></i><br>
                             <div>
                                 <h6 class="text-sm">Subject</h6>
-                                <span class="text-xs">{{$data->subject_id}}</span>
+                                <span class="text-xs">{{$data->subject->subject_name}}</span>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                         <i class="bi bi-pin text-info me-1"></i><br>
                         <div>
                             <h6 class="text-sm">Location</h6>
-                            <span class="text-xs">{{$data->location_id}}, {{$data->city_id}}</span>
+                            <span class="text-xs">{{$data->location->location_name}}, {{$data->city->city_name}}</span>
                         </div>
                     </div>
 

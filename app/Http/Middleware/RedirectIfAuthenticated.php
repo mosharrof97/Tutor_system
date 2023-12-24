@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
 
                     $url = '';
                     if (Auth()->user()->role== 1) {
-                        $url = '/dashboard';
+                        $url = '/admin';
                     } elseif (Auth()->user()->role == 2) {
                         $url = route('guardian');
                     }elseif (Auth()->user()->role == 3) {

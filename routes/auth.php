@@ -12,38 +12,38 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
+    // ====================== Admin  Register Routes =======================//
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
-
     Route::post('register', [RegisteredUserController::class, 'store']);
-
+    // ====================== Admin  Register Routes =======================//
     
+    // ====================== Guardian  Register Routes =======================//
     Route::get('guardian_register', [RegisteredUserController::class, 'createGuardian'])->name('gdn_register');
-
     Route::post('guardian_register', [RegisteredUserController::class, 'storeGuardian'])->name('guardian_register');
+    // ====================== Guardian  Register Routes =======================//
 
-
+    // ====================== Tuitor  Register Routes =======================//
     Route::get('tuitor_register', [RegisteredUserController::class, 'createTuitor'])->name('register_tuitor');
-
     Route::post('tuitor_register', [RegisteredUserController::class, 'storeTuitor'])->name('tuitor_register');
+    // ====================== Tuitor  Register Routes =======================//
 
-
+    // ====================== Login  Register Routes =======================//
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
-
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    // ====================== Login  Register Routes =======================//
 
+    // ====================== Password  Register Routes =======================//
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');
-
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->name('password.email');
-
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
                 ->name('password.reset');
-
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
+    // ====================== Password  Register Routes =======================//
 });
 
 Route::middleware('auth')->group(function () {

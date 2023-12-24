@@ -162,11 +162,11 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <li class="nav-item lh-1 me-3">
-                                <a class=" "  href=" " >Sign In</a>
+                                <a class=" "  href="{{route('login')}}" >Sign In</a>
                             </li>
 
                             <li class="nav-item lh-1 me-3">
-                                <a class=" " href=" " >Job Board</a>
+                                <a class=" " href=" {{route('jobboard')}}" >Job Board</a>
                             </li>
 
                             <li class="nav-item lh-1 me-3">

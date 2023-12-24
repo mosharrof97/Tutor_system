@@ -1,4 +1,4 @@
-@extends('jobBoard.layout.layout')
+@extends('guardian.layout.layout')
 @section('content')
 <!------------------- Please Change Me Here ---------------------->
 
@@ -9,19 +9,19 @@
             <div class="shadow card h-100">
                 <div class="card-body p-4">
                     
-                        @if(session('error'))
+                        {{-- @if(session('error'))
                             <div class="alert alert-danger mb-3">
                                 {{ session('error') }}
                             </div>
                         @elseif (session('success'))
                             <div class="alert alert-success mb-3">
                                 {{ session('success') }}
-                            </div>
-                        @elseif ($applied)
+                            </div> --}}
+                        {{-- @elseif ($applied)
                         <div class="alert alert-danger mb-3">
                             <span>Already applied with Regular Priority.</span>
                         </div>
-                        @endif
+                        @endif --}}
                    
                     <h4 class="card-title font-weight-bold">Need {{$tuitor->category->category_name}} Tutor For {{$tuitor->studentClass->class_name}} Student - {{$tuitor->day->day_name}}</h4>
                     <p class="mt-3 mb-2 text-sm text-muted">

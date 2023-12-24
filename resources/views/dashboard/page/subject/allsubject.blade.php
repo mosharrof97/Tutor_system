@@ -16,7 +16,8 @@
                 <thead class="table-light">
                     <tr>
                         <th>Subject Id</th>
-                        <th>class</th>
+                        <th>Category</th>
+                        <th>Class</th>
                         <th>Subject</th>
                         <th>Actions</th>
                     </tr>
@@ -26,7 +27,8 @@
                   
                     <tr>
                         <td>{{$data->subject_id}}</td>
-                        <td>{{$data->class_id}}</td>
+                        <td>{{$data->studentClass->category->category_name}}</td>
+                        <td>{{$data->studentClass->class_name}}</td>
                         <td>{{$data->subject_name}}</td>
                         <td>
                             <div class="dropdown">

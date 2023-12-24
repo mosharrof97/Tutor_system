@@ -20,5 +20,10 @@ class Category extends Model
         return $this->hasMany(StudentClass::class,'category_id');
     }
 
+    public function tuitor(): HasMany
+    {
+        return $this->hasMany(Tuitor::class,'category_id');
+    }
+
     
 }

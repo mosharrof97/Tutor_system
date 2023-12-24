@@ -16,6 +16,7 @@
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
+                        <th>User</th>
                         <th>Tuition</th>
                         <th>City</th>
                         <th>Address </th>
@@ -31,12 +32,13 @@
                   
                     <tr>
                         <td>{{$data->tuitor_id}}</td>
-                        <td>{{$data->tuition_id}}</td>
-                        <td>{{$data->city_id}}</td>
+                        <td>{{$data->user->name}}</td>
+                        <td>{{$data->tuition->tuition_name}}</td>
+                        <td>{{$data->city->city_name}}</td>
                         <td>{{$data->address}}</td>
-                        <td>{{$data->category_id}}</td>
-                        <td>{{$data->class_id}}</td>
-                        <td>{{$data->subject_id}}</td>
+                        <td>{{$data->category->category_name}}</td>
+                        <td>{{$data->studentClass->class_name}}</td>
+                        <td>{{$data->subject->subject_name}}</td>
                         <td>{{$data->salary}}</td>
                         <td>
                             <div class="dropdown">
@@ -45,6 +47,8 @@
                                 </button>
                                 
                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{route('job_seeker',$data->tuitor_id)}}"><i class="bx bx-edit-alt me-1"></i>  View Job Seeker </a>
+                                    
                                     <a class="dropdown-item" href="{{route('tuitor.edit',$data->tuitor_id)}}"><i class="bx bx-edit-alt me-1"></i>  Edit</a>
                                     <div class="dropdown-item"> 
                                         <form action="{{route('tuitor.delete',$data->tuitor_id)}}" method="post">

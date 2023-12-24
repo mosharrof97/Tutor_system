@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Tuitor;
+use App\Models\Apply;
 
 class jobBoardController extends Controller
 {
@@ -18,20 +19,24 @@ class jobBoardController extends Controller
 
     public function jobDetails($id){
         $data['tuitor'] = Tuitor:: where('tuitor_id', $id)->first();
+        
+        $data['applied'] = Apply::where('tuitor_id',$id)->where('user_id',  Auth::user()->role)->first();
         return view('jobBoard.page.jobDetails', $data);
     }
 
-    public function apply($id){
-        $userRole = Auth::user()->role;
-        if( $userRole == 3){
-            if( $userRole == 3){
+    // public function apply($id){
+    //     dd($id);
+    //     $userRole = Auth::user()->role;
+    //     if( $userRole == 2){
+    //         if( $userRole == 3){
 
-            }else{
+    //         }else{
     
-            }
-        }else{
-
-        }
-    }
+    //         }
+    //     }else{
+    //         // return back()->route('jobdetails')->with('error', 'You cannot apply');
+    //         return 'Hello';
+    //     }
+    // }
 
 }
