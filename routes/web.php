@@ -1,18 +1,18 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\dashboardController;
-use App\Http\Controllers\admin\ProfileController;
-use App\Http\Controllers\admin\tuitorController;
-use App\Http\Controllers\admin\tuitionController;
-use App\Http\Controllers\admin\cityController;
-use App\Http\controllers\admin\CategoryController;
-use App\Http\Controllers\admin\locationController;
-use App\Http\Controllers\admin\studentController;
-use App\Http\Controllers\admin\classController;
-use App\Http\Controllers\admin\dayController;
-use App\Http\Controllers\admin\subjectController;
-use App\Http\Controllers\admin\socialMediaController;
-use App\Http\Controllers\admin\guardianController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\tuitorController;
+use App\Http\Controllers\tuitionController;
+use App\Http\Controllers\cityController;
+use App\Http\controllers\CategoryController;
+use App\Http\Controllers\locationController;
+use App\Http\Controllers\studentController;
+use App\Http\Controllers\classController;
+use App\Http\Controllers\dayController;
+use App\Http\Controllers\subjectController;
+use App\Http\Controllers\socialMediaController;
+use App\Http\Controllers\admin\adminGuardianController;
 
 use App\Http\Controllers\FrontentController;
 use App\Http\Controllers\jobBoardController;
@@ -93,9 +93,9 @@ Route::post('/apply_accept/{id}', [tuitorController::class, 'accept'])-> name('a
 
     // .....................Guardian Route.......................
     
-Route::get('/guardian', [guardianController::class, 'guardian'])-> name('all_guardian');
-Route::get('/guardian_details/{id}', [guardianController::class, 'details'])-> name('guardian.details');
-Route::delete('/delete_guardian/{id}', [guardianController::class, 'delete'])-> name('guardian.delete');
+Route::get('/guardian', [adminGuardianController::class, 'guardian'])-> name('all_guardian');
+Route::get('/guardian_details/{id}', [adminGuardianController::class, 'details'])-> name('guardian.details');
+Route::delete('/delete_guardian/{id}', [adminGuardianController::class, 'delete'])-> name('guardian.delete');
 
 
 

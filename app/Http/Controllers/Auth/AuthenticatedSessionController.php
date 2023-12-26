@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
 
         $url = '';
         if (Auth()->user()->role== 1) {
-            $url = '/dashboard';
+            $url = route('dashboard');
         } elseif (Auth()->user()->role == 2) {
             $url = route('gdn_register');
         }elseif (Auth()->user()->role == 3) {

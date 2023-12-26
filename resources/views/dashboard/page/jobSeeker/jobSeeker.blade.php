@@ -19,6 +19,7 @@
                         <th>Name</th>
                         <th>Number</th>
                         <th>Email</th>
+                        <th>Apply</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -30,6 +31,7 @@
                         <td>{{$data->name}}</td>
                         <td>{{$data->number}}</td>
                         <td>{{$data->email}}</td>
+                        <td>{{$data->apply->count()}}</td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

@@ -37,7 +37,7 @@ class Tuitor extends Model
 
     public function apply(): HasMany
     {
-        return $this->hasMany(Apply::class);
+        return $this->hasMany(Apply::class, 'tuitor_id');
     }
 
     public function user(): BelongsTo

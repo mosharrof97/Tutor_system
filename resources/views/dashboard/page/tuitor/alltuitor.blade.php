@@ -41,7 +41,15 @@
                         <td>{{$data->studentClass->class_name}}</td>
                         <td>{{$data->subject->subject_name}}</td>
                         <td>{{$data->salary}}</td>
-                         <td>{{--{{$data->apply->user_id}} --}}1</td>
+                        <td>{{$data->apply->count()}}</td>
+                        {{-- <td>{{$data->apply->where('status',1)}}</td> --}}
+
+                        {{-- @if($data->apply->where('status',1) = 1)
+                        <td class="text-primary">Accepted</td>
+                        @else
+                        <td class="text-danger">Pending</td>
+                        @endif --}}
+                        
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

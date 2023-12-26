@@ -20,6 +20,6 @@ class dashboardController extends Controller
         ];
         // dd(count($data['jobSeeker']));
 
-        return view('dashboard.page.dashboard', $data);
+        return view('dashboard.page.dashboard1', $data);
     }
 }

@@ -54,7 +54,7 @@
 
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-                    <a href="{{ route('dashboard') }}" class="app-brand-link">
+                    <a href="index.html" class="app-brand-link">
                         <span class="app-brand-logo demo">
                             <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -108,11 +108,11 @@
                     </a>
                 </div>
 
-                <div class="menu-inner-shadow "></div>
+                <div class="menu-inner-shadow"></div>
 
-                <ul class="menu-inner bg-dark py-1">
+                <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item pt-4 active">
+                    <li class="menu-item active">
                         <a href="{{route('dashboard')}}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
@@ -463,7 +463,7 @@
             <div class="layout-page">
                 <!-- Navbar -->
 
-                <nav class="layout-navbar bg-dark container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
@@ -475,7 +475,7 @@
                         <!-- Search -->
                         <div class="navbar-nav align-items-center">
                             <div class="nav-item d-flex align-items-center">
-                                {{-- <i class="bx bx-search fs-4 lh-0"></i> --}}
+                                <i class="bx bx-search fs-4 lh-0"></i>
                                 <input type="text" class="form-control border-0 shadow-none"
                                     placeholder="Search..." aria-label="Search..." />
                             </div>

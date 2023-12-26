@@ -645,7 +645,7 @@ a:hover {
 .layout-navbar-fixed .layout-page:before {
   -webkit-backdrop-filter: saturate(200%) blur(10px);
           backdrop-filter: saturate(200%) blur(10px);
-  background: rgba(245, 245, 249, 0.6);
+  background: rgba(231, 231, 231, 0.6);
 }
 
 .bg-menu-theme {
@@ -655,14 +655,14 @@ a:hover {
 .bg-menu-theme .menu-link,
 .bg-menu-theme .menu-horizontal-prev,
 .bg-menu-theme .menu-horizontal-next {
-  color: #697a8d;
+  color: #cecece;
 }
 .bg-menu-theme .menu-link:hover, .bg-menu-theme .menu-link:focus,
 .bg-menu-theme .menu-horizontal-prev:hover,
 .bg-menu-theme .menu-horizontal-prev:focus,
 .bg-menu-theme .menu-horizontal-next:hover,
 .bg-menu-theme .menu-horizontal-next:focus {
-  color: #566a7f;
+  color: #ffffff;
 }
 .bg-menu-theme .menu-link.active,
 .bg-menu-theme .menu-horizontal-prev.active,
@@ -693,7 +693,7 @@ a:hover {
   color: #697a8d;
 }
 .bg-menu-theme .menu-inner-shadow {
-  background: linear-gradient(#fff 41%, rgba(255, 255, 255, 0.11) 95%, rgba(255, 255, 255, 0));
+  background: linear-gradient(#fff 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0));
 }
 .bg-menu-theme .menu-text {
   color: #566a7f;

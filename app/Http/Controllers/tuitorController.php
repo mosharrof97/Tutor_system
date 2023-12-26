@@ -21,7 +21,8 @@ class tuitorController extends Controller
 {
     // ---------Tuitor View----------//
     public Function tuitor(){
-        $tuitor = Tuitor::orderBy('tuitor_id', 'desc')->get();
+        $tuitor = Tuitor::with('apply')->orderBy('tuitor_id', 'desc')->get();
+        
         return view('dashboard\page\tuitor\alltuitor', compact('tuitor'));
     }
 

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class guardianController extends Controller
+class adminGuardianController extends Controller
 {
     public function guardian(){
 
@@ -23,5 +24,4 @@ class guardianController extends Controller
         User::where('id', $id)->delete();
         return Redirect::route('all_guardian')->with('success', 'Guardian Delete Successfull');
     }
-
 }
