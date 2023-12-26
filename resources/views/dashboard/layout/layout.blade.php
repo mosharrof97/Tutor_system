@@ -113,16 +113,35 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active">
-                        <a href="index.html" class="menu-link">
+                        <a href="{{route('dashboard')}}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
                     </li>
 
+                    {{-- Guardian & Job Seeker --}}
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Guardian & Job Seeker</span>
+                    </li>
 
+                    
+                    <li class="menu-item">
+                        <a href="{{route('all_job_seeker')}}" class="menu-link">
+                            <div data-i18n="Account">Job Seeker</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{route('all_guardian')}}" class="menu-link">
+                            <div data-i18n="Notifications">Guardian</div>
+                        </a>
+                    </li>
+                    {{-- Guardian & Job Seeker --}}
+                           
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">Pages</span>
                     </li>
+
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>

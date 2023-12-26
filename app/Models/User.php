@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function apply(): HasMany
     {
-        return $this->hasMany(Apply::class, 'user_id');
+        return $this->hasMany(Apply::class);
     }
     // public function tuitor(): HasMany
     // {

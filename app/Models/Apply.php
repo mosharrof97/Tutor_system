@@ -18,11 +18,11 @@ class Apply extends Model
 
     public function tuitor(): BelongsTo
     {
-        return $this->belongsTo(Tuitor::class,'tuitor_id');
+        return $this->belongsTo(Tuitor::class,);
     }
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class);
     }
 }

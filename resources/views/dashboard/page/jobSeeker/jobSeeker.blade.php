@@ -1,7 +1,7 @@
 @extends('dashboard.layout.layout')
 @section('content')
     <div class="card pb-3">
-        <h5 class="card-header">All jobs</h5>
+        <h5 class="card-header">All job Seeker</h5>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 @if(session('success'))
@@ -16,32 +16,20 @@
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
-                        <th>User</th>
-                        <th>Tuition</th>
-                        <th>City</th>
-                        <th>Address </th>
-                        <th>Category</th>
-                        <th>Class</th>
-                        <th>Subjects</th>
-                        <th>Salary </th>
-                        <th>Apply </th>
+                        <th>Name</th>
+                        <th>Number</th>
+                        <th>Email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ( $tuitor as $data)
+                    @foreach ( $jobSeeker as $data)
                   
                     <tr>
-                        <td>{{$data->tuitor_id}}</td>
-                        <td>{{$data->user->name}}</td>
-                        <td>{{$data->tuition->tuition_name}}</td>
-                        <td>{{$data->city->city_name}}</td>
-                        <td>{{$data->address}}</td>
-                        <td>{{$data->category->category_name}}</td>
-                        <td>{{$data->studentClass->class_name}}</td>
-                        <td>{{$data->subject->subject_name}}</td>
-                        <td>{{$data->salary}}</td>
-                         <td>{{--{{$data->apply->user_id}} --}}1</td>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->number}}</td>
+                        <td>{{$data->email}}</td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -49,15 +37,13 @@
                                 </button>
                                 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('admin_job_seeker',$data->tuitor_id)}}"><i class="bx bx-edit-alt me-1"></i>  View Job Seeker </a>
-                                    
-                                    {{-- @if ( $data->apply->user->role == 1) --}}
-                                    <a class="dropdown-item" href="{{route('tuitor.edit',$data->tuitor_id)}}"><i class="bx bx-edit-alt me-1"></i>  Edit</a>
+                                    <a class="dropdown-item" href="{{route('job_seeker_details',$data->id)}}"><i class="bx bx-edit-alt me-1"></i>  View </a>
+
                                     <div class="dropdown-item"> 
-                                        <form action="{{route('tuitor.delete',$data->tuitor_id)}}" method="post">
+                                        <form action="{{route('job_seeker.delete',$data->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="bx bx-trash me-1"></i>Delete</button>
+                                            <button type="submit" class="btn btn-light btn-sm ps-0"><i class="bx bx-trash "></i>Delete</button>
                                           </form>
                                     </div>
                                                                            

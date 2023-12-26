@@ -1,4 +1,4 @@
-@extends('guardian\layout\layout')
+@extends('dashboard\layout\layout')
 @section('content')
     <div class="card pb-3">
         <h5 class="card-header">Tuitor</h5>

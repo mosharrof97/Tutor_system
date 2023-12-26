@@ -15,6 +15,7 @@ use App\Models\SocialMedia;
 use App\Models\Subject;
 use App\Models\StudentClass;
 use App\Models\Location;
+use App\Models\Apply;
 
 class tuitorController extends Controller
 {
@@ -35,8 +36,7 @@ class tuitorController extends Controller
             'social' =>SocialMedia::orderBy('social_name', 'ASC')->get(),
         ];
 
-
-        return view('dashboard.page.tuitor.addtuitor', $data);
+     return view('dashboard.page.tuitor.addtuitor', $data);
     }
 
 
@@ -46,8 +46,6 @@ class tuitorController extends Controller
             $subject=Subject::where('class_id', $request->class_id)->orderBy('subject_name', 'ASC')->get();
             $location=Location::where('city_id', $request->city_id)->orderBy('location_name', 'ASC')->get();
         
-        
-
         return response()->json([
             'status'=> true,
             'class' =>$class,
@@ -57,7 +55,6 @@ class tuitorController extends Controller
     }
 
     public Function store( Request $request ){
-
         $request->validate([
             'tuition_id' => 'required',
             'city_id' => 'required',
@@ -154,4 +151,10 @@ class tuitorController extends Controller
         return Redirect::route('tuitor')->with('success', 'Tuitor Delete Successfull');
     }
 
+
+    // -----------Job Seeker-------------
+    public function jobSeeker($id){
+        $data['jobSeeker']= Apply::where('tuitor_id', $id)->orderBy('id','ASC')->get();
+        return view('dashboard.page.tuitor.jobSeeker', $data);
+    }
 }

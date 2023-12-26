@@ -32,9 +32,9 @@
                   
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$data->user->name}}</td>
+                        <td>{{$data->user_id}}</td>
                         {{-- <td>{{$data->city->city_name}}</td> --}}
-                        <td>{{$data->user->gender}}</td>
+                        {{-- <td>{{$data->user->gender}}</td> --}}
 
                         <td>
                             @if ($data->status == 0)

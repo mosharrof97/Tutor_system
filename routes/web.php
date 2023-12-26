@@ -1,18 +1,23 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\tuitorController;
-use App\Http\Controllers\tuitionController;
-use App\Http\Controllers\cityController;
-use App\Http\controllers\CategoryController;
-use App\Http\Controllers\locationController;
+use App\Http\Controllers\admin\dashboardController;
+use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\admin\tuitorController;
+use App\Http\Controllers\admin\tuitionController;
+use App\Http\Controllers\admin\cityController;
+use App\Http\controllers\admin\CategoryController;
+use App\Http\Controllers\admin\locationController;
+use App\Http\Controllers\admin\studentController;
+use App\Http\Controllers\admin\classController;
+use App\Http\Controllers\admin\dayController;
+use App\Http\Controllers\admin\subjectController;
+use App\Http\Controllers\admin\socialMediaController;
+use App\Http\Controllers\admin\guardianController;
+
 use App\Http\Controllers\FrontentController;
-use App\Http\Controllers\studentController;
-use App\Http\Controllers\classController;
-use App\Http\Controllers\dayController;
-use App\Http\Controllers\subjectController;
-use App\Http\Controllers\socialMediaController;
 use App\Http\Controllers\jobBoardController;
+use App\Http\Controllers\JobseekerController;
+
 
 use App\Http\Controllers\guardian\guardianTuitorController;
 
@@ -29,13 +34,6 @@ use App\Http\Controllers\tuitor\applyController;
 |
 */
 // Login From Routes ---------------------------------------------------
-Route::get('/mylogin', function () {
-    return view('frontend.loginfrom.login');
-});
-
-Route::get('/signup', function () {
-    return view('frontend.loginfrom.signup');
-});
 
 
 //======================= Frontend Routes =======================//
@@ -54,16 +52,6 @@ Route::get('/jobdetails/{id}', [jobBoardController::class, 'jobDetails'])->name(
 //==================== Job Board Routes =========================//
 
 
-// Backend Routes ---------------------------------------------------
-// Route::get('/db', function () {
-//     return view('dashboard.page.dashboard');
-// });
-
-// Route::get('/form', function () {
-//     return view('dashboard.page.form.baseForm');
-// });
-
-
 
 //===================== Auth Common  Routes =====================//
 Route::middleware('auth')->group(function () {
@@ -80,9 +68,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () {
 
     //.....................Admin dashboard........................
-    Route::get('/', function () {
-        return view('dashboard.page.dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/', [dashboardController::class, 'dashboard'])->name('dashboard');
 
     //.....................Tuitor........................
     Route::get('/tuitor', [tuitorController::class, 'tuitor'])-> name('tuitor');
@@ -92,6 +78,28 @@ Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () 
     Route::get('/update_tuitor/{id}', [tuitorController::class, 'edit'])-> name('tuitor.edit');
     Route::put('/update_tuitor/{id}', [tuitorController::class, 'update'])-> name('tuitor.update');
     Route::delete('/delete_tuitor/{id}', [tuitorController::class, 'delete'])-> name('tuitor.delete');
+
+
+    // .....................Job Seeker........................
+    
+Route::get('/job_seeker', [JobseekerController::class, 'jobSeeker'])-> name('all_job_seeker');
+Route::get('/job_seeker_details/{id}', [JobseekerController::class, 'details'])-> name('job_seeker_details');
+Route::delete('/delete_job_seeker/{id}', [JobseekerController::class, 'delete'])-> name('job_seeker.delete');
+
+Route::get('/job_seeker/{id}', [tuitorController::class, 'jobSeeker'])-> name('admin_job_seeker');
+Route::post('/apply_accept/{id}', [tuitorController::class, 'accept'])-> name('admin_view_job_seeker');
+
+
+
+    // .....................Guardian Route.......................
+    
+Route::get('/guardian', [guardianController::class, 'guardian'])-> name('all_guardian');
+Route::get('/guardian_details/{id}', [guardianController::class, 'details'])-> name('guardian.details');
+Route::delete('/delete_guardian/{id}', [guardianController::class, 'delete'])-> name('guardian.delete');
+
+
+
+
 
     //........Tuition ........................
     Route::get('/tuition', [tuitionController::class, 'tuition'])-> name('tuition');
