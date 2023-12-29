@@ -20,7 +20,7 @@ class jobBoardController extends Controller
     public function jobDetails($id){
         $data['tuitor'] = Tuitor:: where('tuitor_id', $id)->first();
         
-        $data['applied'] = Apply::where('tuitor_id',$id)->where('user_id',  Auth::user()->role)->first();
+        $data['applied'] = Apply::where('tuitor_id',$id)->where('user_id',  Auth::user()->id)->first();
         return view('jobBoard.page.jobDetails', $data);
     }
 
