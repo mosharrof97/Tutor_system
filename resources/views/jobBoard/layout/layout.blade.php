@@ -110,16 +110,16 @@
 
                 <div class="menu-inner-shadow"></div>
 
-                <ul class="menu-inner list-group py-1 px-3 ">
+                <ul class="menu-inner list-group py-1 px-3 bg-dark ">
                     <!-- Dashboard -->
-                    <li class="list-group-item border-0">
-                        <h4 >About Us</h4>
-                            <p>Caretutors was founded in 2012. It is Bangladesh's first, most trusted and leading online platform for guardians, students, and tutors to hire verified tutors or find tuition jobs in 13 different categories from anywhere in the country.</p>
+                    <li class="list-group-item border-0 ">
+                        <h4 class="text-light" >About Us</h4>
+                            <p class="text-light">Caretutors was founded in 2012. It is Bangladesh's first, most trusted and leading online platform for guardians, students, and tutors to hire verified tutors or find tuition jobs in 13 different categories from anywhere in the country.</p>
                     </li>
 
-                    <li class="list-group-item border-0">
-                        <h4 >Available Now</h4>
-                            <p>
+                    <li class="list-group-item border-0 ">
+                        <h4 class="text-light">Available Now</h4>
+                            <p class="text-light">
                                 With Caretutors official app, Make your profile in minutes. Apply to your preferred tutoring jobs that match your skills</p>
                     </li>
                     
@@ -133,7 +133,7 @@
             <div class="layout-page">
                 <!-- Navbar -->
 
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme bg-dark"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
@@ -145,11 +145,11 @@
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
 
-                        <div class="">
+                        {{-- <div class="">
                             <div class=" m-3 ">
                                 <h4> 1463 jobs found</h4>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Search -->
                         <div class="navbar-nav align-items-center">
                             <div class="nav-item d-flex align-items-center">
@@ -161,17 +161,29 @@
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
+                          
                             <li class="nav-item lh-1 me-3">
-                                <a class=" "  href="{{route('login')}}" >Sign In</a>
+                                <a class=" text-white" href=" {{route('jobboard')}}" >Job Board</a>
                             </li>
 
-                            <li class="nav-item lh-1 me-3">
-                                <a class=" " href=" {{route('jobboard')}}" >Job Board</a>
-                            </li>
+                            @if (Auth::check())
+                                <li class="nav-item lh-1 me-3">
+                                    <a class=" text-white"  href="{{route('login')}}" >Dashboard</a>
+                                </li>
+                            @else
+                                <li class="nav-item lh-1 me-3">
+                                    <a class="text-white"  href="{{route('login')}}" >Sign In</a>
+                                </li>
+                            @endif
 
-                            <li class="nav-item lh-1 me-3">
-                                <a class="btn btn-primary" href=" " > Become a Tutor</a>
-                            </li>
+                            @if (Auth::check())
+                                
+                            @else
+                                <li class="nav-item lh-1 me-3">
+                                    <a class="btn btn-primary" href="{{route('guardian_register')}}" > Register</a>
+                                </li>
+                            @endif
+                         
 
                         </ul>
                     </div>

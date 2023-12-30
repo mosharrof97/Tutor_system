@@ -123,9 +123,9 @@
                      <img src="{{ asset('assets/img/avatars/1.png') }}" class="rounded-circle img-fluid" style="width:150px"/>
                    </div>
                     <div class="mt-3">
-                        <span>Rakib</span><br>
-                        <span>wdpf23@gmail.com</span><br>
-                        <span>Tutor ID : 307443</span><br>
+                        <span>{{auth()->user()->name}}</span><br>
+                        <span>{{auth()->user()->email}}</span><br>
+                        {{-- <span>Tutor ID : 307443</span><br> --}}
                     </div>
 
                    </li>
@@ -274,7 +274,7 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="{{route('profile.edit')}}">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">My Profile</span>
                                         </a>

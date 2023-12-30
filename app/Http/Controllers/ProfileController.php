@@ -16,10 +16,19 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-               
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        if($request->user()->role == 1){
+            return view('dashboard.pages.profile.edit_profile', [
+                'user' => $request->user(),
+            ]);
+        }elseif ($request->user()->role == 2) {
+            return view('guardian.pages.profile.edit_profile', [
+                'user' => $request->user(),
+            ]);
+        } elseif ($request->user()->role == 3){
+            return view('tuitorpanel.pages.profile.edit_profile', [
+                'user' => $request->user(),
+            ]);
+        }
     }
 
     /**
