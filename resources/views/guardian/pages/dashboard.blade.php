@@ -1,19 +1,19 @@
-@extends('guardian\layout\layout')
+@extends('guardian.layout.layout')
 @section('content')
     <div class="row">
-        <div class="col-lg-12 mb-4 order-0">
-            <div class="card">
+        <div class="col-lg-12 mb-4 order-0 ">
+            <div class="card bg-dark">
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Congratulations Dear Guardian! 🎉</h5>
-                            <p class="mb-4">
+                            <h5 class="card-title text-primary text-light">Congratulations Dear Guardian! 🎉</h5>
+                            <p class="mb-4 text-light">
                                 You have done <span class="fw-bold">Notice Board</span> Our "Tutor of the Month, November 2023" 
                                 is Teacher, Tutor ID: 105 and our "Guardian of the Month, November 2023" is Shatarupa Saha 
                                 Chowdhury Job ID: 50. Heartiest congratulations to both of them; we're glad to work with them
                             </p>
 
-                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View
+                            <a href="javascript:;" class="btn btn-sm btn-outline-primary text-light">View
                                 Badges</a>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
         </div>
         <div class="order-1">
             <div class="row">
-                <div class="col-lg-4 col-md-12  mb-4">
-                    <div class="card">
+                <div class="col-lg-4 col-md-12  mb-4 ">
+                    <div class="card bg-dark">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
@@ -49,14 +49,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="fw-semibold d-block mb-1">Verify</h3>
-                            <p class="card-title mb-2">If you want to make a request, you have <br> to confirm at least one job.</p>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                            <h3 class="fw-semibold d-block mb-1 text-light">Verify</h3>
+                            <p class="card-title mb-2 text-light">If you want to make a request, you have <br> to confirm at least one job.</p>
+                            <small class="text-success fw-semibold text-light"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12  mb-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
@@ -75,14 +75,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3>Confirmed jobs</h3>
-                            <p class="card-title text-nowrap mb-1">Complete & organized profile <br> may help to get better response</p>
+                            <h3 class="text-light">Confirmed jobs</h3>
+                            <p class="card-title text-nowrap mb-1 text-light">Complete & organized profile <br> may help to get better response</p>
                             {{-- <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small> --}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
@@ -101,9 +101,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <span>Applied Jobs</span>
-                            <h3 class="card-title text-nowrap mb-1">7</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                            <span class="text-light">Applied Jobs</span>
+                            <h3 class="card-title text-nowrap mb-1 text-light">7</h3>
+                            <small class="text-success fw-semibold text-light"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
         <div class="col-12 order-md-2">
             <div class="row">
                 <div class="col-8 mb-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
@@ -185,14 +185,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="d-block mb-1">Payments</span>
-                            <h3 class="card-title text-nowrap mb-2">20,000</h3>
-                            <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                            <span class="d-block mb-1 text-light">Payments</span>
+                            <h3 class="card-title text-nowrap mb-2 text-light">20,000</h3>
+                            <small class="text-danger fw-semibold text-light"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-4 mb-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
@@ -211,28 +211,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="fw-semibold d-block mb-1">Appointed Jobs</span>
-                            <h3 class="card-title mb-2">5</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                            <span class="fw-semibold d-block mb-1 text-light">Appointed Jobs</span>
+                            <h3 class="card-title mb-2 text-light">5</h3>
+                            <small class="text-success fw-semibold text-light"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
                         </div>
                     </div>
                 </div>
                 <!-- </div>
                     <div class="row"> -->
                 <div class="col-12 mb-4">
-                    <div class="card">
+                    <div class="card bg-dark">
                         <div class="card-body">
                             <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                                 <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                                     <div class="card-title">
-                                        <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                        <span class="badge bg-label-warning rounded-pill">Year
+                                        <h5 class="text-nowrap mb-2 text-light">Profile Report</h5>
+                                        <span class="badge bg-label-warning rounded-pill text-light">Year
                                             2023</span>
                                     </div>
                                     <div class="mt-sm-auto">
                                         <small class="text-success text-nowrap fw-semibold"><i
-                                                class="bx bx-chevron-up"></i> 68.2%</small>
-                                        <h3 class="mb-0">84,686k</h3>
+                                                class="bx bx-chevron-up text-light"></i> 68.2%</small>
+                                        <h3 class="mb-0 text-light">84,686k</h3>
                                     </div>
                                 </div>
                                 <div id="profileReportChart"></div>

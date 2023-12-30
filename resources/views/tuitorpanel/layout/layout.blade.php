@@ -110,7 +110,7 @@
 
                 <div class="menu-inner-shadow"></div>
 
-                <ul class="menu-inner py-1">
+                <ul class="menu-inner py-1 bg-dark">
                     <!-- Dashboard -->
                     <li class="menu-item active">
                         <a href="index.html" class="menu-link">
@@ -123,9 +123,8 @@
                      <img src="{{ asset('assets/img/avatars/1.png') }}" class="rounded-circle img-fluid" style="width:150px"/>
                    </div>
                     <div class="mt-3">
-                        <span>Rakib</span><br>
-                        <span>wdpf23@gmail.com</span><br>
-                        <span>Tutor ID : 307443</span><br>
+                        <span>{{Auth()->user()->name}}</span><br>
+                        <span>{{Auth()->user()->email}}</span><br>
                     </div>
 
                    </li>
@@ -136,7 +135,7 @@
 
 
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <a href="{{route('jobboard')}}" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
                             <div data-i18n="Account Settings">Job Board</div>
                         </a>
@@ -186,7 +185,7 @@
             <div class="layout-page">
                 <!-- Navbar -->
 
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme bg-dark"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
@@ -234,8 +233,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">John Doe</span>
-                                                    <small class="text-muted">Admin</small>
+                                                    <span class="fw-semibold d-block">{{Auth()->user()->name}}</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -244,7 +242,7 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="{{route('profile.edit')}}">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">My Profile</span>
                                         </a>
@@ -271,7 +269,6 @@
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            {{-- <a class="btn  btn-auth mx-3" href="{{ route('logout')}}" onclick="event.preventDefault(); this.closest('form').submit();">Log out</a> --}}
                                             <input type="submit" value="Log out">
                                         </form>
                                     </li>

@@ -136,6 +136,30 @@
                             <div data-i18n="Notifications">Guardian</div>
                         </a>
                     </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                            <div data-i18n="Account Settings">Job</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="{{route('tuitor')}}" class="menu-link">
+                                    <div data-i18n="Account">Job Post</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('applyData')}}" class="menu-link">
+                                    <div data-i18n="Notifications">Applied</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{route('acceptedData')}}" class="menu-link">
+                                    <div data-i18n="Connections">Approved</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     {{-- Guardian & Job Seeker --}}
                            
                     <li class="menu-header small text-uppercase">

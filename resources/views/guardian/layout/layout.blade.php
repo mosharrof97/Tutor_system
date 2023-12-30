@@ -110,7 +110,7 @@
 
                 <div class="menu-inner-shadow"></div>
 
-                <ul class="menu-inner py-1">
+                <ul class="menu-inner py-1 bg-dark">
                     <!-- Dashboard -->
                     <li class="menu-item active">
                         <a href="index.html" class="menu-link">

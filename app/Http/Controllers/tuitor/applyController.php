@@ -34,8 +34,16 @@ class applyController extends Controller
 
     public function jobSeeker($id){
         $data['jobSeeker']= Apply::where('tuitor_id', $id)->orderBy('id','ASC')->get();
-        return view('guardian\pages\tuitor\jobSeeker', $data);
+        return view('guardian.pages.tuitor.jobSeeker', $data);
     }
+
+    // --------- View Data In Admin Dashboard --------------//
+    public function applyData(){
+        $data['apply']= Apply::orderBy('id','ASC')->get();
+        return view('dashboard.page.Job_Apply_Approved.applyData', $data);
+    }
+    // --------- View Data In Admin Dashboard --------------//
+
 
     public function accept($id){
         $status = Apply::where('id', $id)->where('status', 0)->first();

@@ -13,6 +13,7 @@ use App\Http\Controllers\dayController;
 use App\Http\Controllers\subjectController;
 use App\Http\Controllers\socialMediaController;
 use App\Http\Controllers\admin\adminGuardianController;
+use App\Http\Controllers\admin\acceptedController;
 
 use App\Http\Controllers\FrontentController;
 use App\Http\Controllers\jobBoardController;
@@ -79,7 +80,16 @@ Route::prefix('admin')->middleware( ['auth', 'checkRole:1'])->group(function () 
     Route::put('/update_tuitor/{id}', [tuitorController::class, 'update'])-> name('tuitor.update');
     Route::delete('/delete_tuitor/{id}', [tuitorController::class, 'delete'])-> name('tuitor.delete');
 
+    // ...........................Apply Data......................
+    Route::get('/applyData', [applyController::class, 'applyData'])-> name('applyData');
+    // ...........................Apply Data......................
 
+
+    // ...........................Accepted Data......................
+    Route::get('/acceptedData', [acceptedController::class, 'acceptedData'])-> name('acceptedData'); 
+    Route::get('/acceptedDetails/{id}', [acceptedController::class, 'acceptedDetails'])->name('acceptedDetails');
+    // ...........................Accepted Data......................
+ 
     // .....................Job Seeker........................
     
 Route::get('/job_seeker', [JobseekerController::class, 'jobSeeker'])-> name('all_job_seeker');
@@ -90,15 +100,11 @@ Route::get('/job_seeker/{id}', [tuitorController::class, 'jobSeeker'])-> name('a
 Route::post('/apply_accept/{id}', [tuitorController::class, 'accept'])-> name('admin_view_job_seeker');
 
 
-
     // .....................Guardian Route.......................
     
 Route::get('/guardian', [adminGuardianController::class, 'guardian'])-> name('all_guardian');
 Route::get('/guardian_details/{id}', [adminGuardianController::class, 'details'])-> name('guardian.details');
 Route::delete('/delete_guardian/{id}', [adminGuardianController::class, 'delete'])-> name('guardian.delete');
-
-
-
 
 
     //........Tuition ........................
@@ -204,9 +210,7 @@ Route::post('/apply_accept/{id}', [applyController::class, 'accept'])-> name('ap
 // ====================== Tuitor  Routes =======================//
 Route::prefix('tuitor')->middleware(['auth', 'checkRole:3'])->group(function () {
     // Tuitor Dashboard Routes ---------------------------------------------------
-    Route::get('/tuitorpanel', function () {
-        return view('tuitorpanel.pages.dashboard');
-    })->name('tuitorpanel');
+    Route::get('/', [ JobseekerController::class, 'dashboard'])->name('tuitorpanel');
 
     // Route::post('/apply/{id}', [applyController::class, 'apply'])-> name('apply');
 

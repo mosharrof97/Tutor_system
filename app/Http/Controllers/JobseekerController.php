@@ -7,6 +7,12 @@ use App\Models\User;
 
 class JobseekerController extends Controller
 {
+    public function dashboard(){
+
+        // $jobSeeker = User::where('role', 3)->get();
+        return View('tuitorpanel.pages.dashboard');
+    }
+
     public function jobSeeker(){
 
         $jobSeeker = User::where('role', 3)->get();
